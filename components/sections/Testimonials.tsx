@@ -19,7 +19,7 @@ const TESTIMONIALS = [
         signal: 95
     },
     {
-        name: "David Kim",
+        name: "Anshuman Samal",
         role: "Lead Developer",
         company: "Pole Studios",
         text: "Not just a designer, but a technical partner who understands the constraints and possibilities of modern web development.",
