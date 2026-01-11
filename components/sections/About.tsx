@@ -35,7 +35,7 @@ export default function About() {
                                 that balance aesthetics with impenetrable security.
                             </p>
                             <p>
-                                From building AI-powered Discord bots to designing luxury brand identities —
+                                Designing luxury brand identities —
                                 I architect systems that are both beautiful and bulletproof.
                             </p>
                             <p className="text-green-400">$ _</p>
