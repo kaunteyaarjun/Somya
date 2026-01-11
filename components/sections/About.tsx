@@ -31,7 +31,7 @@ export default function About() {
                                 <span className="text-white font-bold"> design</span>, and <span className="text-white font-bold">development</span>.
                             </p>
                             <p>
-                                Currently pursuing B.Tech in Cybersecurity while crafting premium digital experiences
+                                Specializing in Cybersecurity while crafting premium digital experiences
                                 that balance aesthetics with impenetrable security.
                             </p>
                             <p>
