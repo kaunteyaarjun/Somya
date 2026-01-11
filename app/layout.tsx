@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
+import { Outfit, Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import GrainOverlay from "@/components/ui/GrainOverlay";
@@ -19,6 +19,11 @@ const inter = Inter({
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -65,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground overflow-x-hidden font-sans`}
+        className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} ${caveat.variable} antialiased bg-background text-foreground overflow-x-hidden font-sans`}
       >
         <SmoothScroll>
           <ScrollProgress />

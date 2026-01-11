@@ -12,9 +12,9 @@ const TESTIMONIALS = [
         signal: 98
     },
     {
-        name: "Sarah Chen",
-        role: "CTO",
-        company: "TechFlow",
+        name: "Swamit Kumar Sahoo",
+        role: "Owner",
+        company: "Blast Cafe, Cuttack",
         text: "Working with Somya was a game-changer for our brand identity. The attention to detail and futuristic aesthetic gave us the edge we needed.",
         signal: 95
     },

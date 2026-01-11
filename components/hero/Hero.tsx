@@ -138,7 +138,7 @@ export default function Hero() {
                         className="absolute top-[15%] md:top-[25%] left-[5%] right-[5%] md:right-auto z-10 flex flex-col space-y-4 md:space-y-6 pointer-events-none"
                     >
                         <div className="space-y-2">
-                            <div className="font-mono text-gold text-xs md:text-sm tracking-widest uppercase overflow-hidden">
+                            <div className="font-[family-name:var(--font-caveat)] text-gold text-lg md:text-2xl tracking-widest overflow-hidden lowercase">
                                 <TextReveal text="I see only the bird's eye." mode="masked" delay={1.5} />
                             </div>
                             <MultilingualName />
