@@ -29,7 +29,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Somya Prasad | Futuristic Portfolio",
+  title: "Somya Prasad | Portfolio",
   description: "Secure. Cinematic. Elegant. A multidisciplinary creator at the intersection of cybersecurity, design, and development.",
   keywords: ["Somya Prasad", "Kaunteya Arjun", "Cybersecurity", "UX Design", "Full Stack Developer", "Next.js", "Portfolio", "3D Artist"],
   // ✅ FIXED: Updated to your verified domain
