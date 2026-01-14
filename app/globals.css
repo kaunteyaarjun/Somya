@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-foreground: #ededed;
+
+  /* Custom Colors */
+  --color-gold: #D4AF37;
+  --color-neon-amber: #FFBF00;
+  --color-charcoal: #121212;
+
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+:root {
+  --background: #050505;
+  --foreground: #ededed;
+  --gold: #D4AF37;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  --font-syncopate: var(--font-syncopate);
+}
+
+::selection {
+  background-color: var(--gold);
+  color: black;
+}
+
+body {
+  cursor: none;
+  /* Hide default cursor */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    transform: translate(0);
+  }
+
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    transform: translate(0);
+  }
+
+  100% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    transform: translate(0);
+  }
+
+  20% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+    transform: translate(2px, -2px);
+  }
+
+  40% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+    transform: translate(-2px, 2px);
+  }
+
+  60% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    transform: translate(0);
+  }
+
+  100% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    transform: translate(0);
+  }
+}
+
+.animate-glitch-1 {
+  animation: glitch-1 0.4s infinite linear alternate-reverse;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 0.4s infinite linear alternate-reverse;
+}
+
+/* 2025 Trend: Glow Design */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2),
+    0 0 60px rgba(212, 175, 55, 0.1);
+}
+
+.glow-gold-subtle {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2),
+    0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.5),
+    0 0 50px rgba(212, 175, 55, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #D4AF37, #FFD700);
+  z-index: 9999;
+  transform-origin: left;
+}
