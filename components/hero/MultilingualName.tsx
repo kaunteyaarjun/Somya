@@ -99,7 +99,7 @@ export default function MultilingualName() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.2, duration: 0.8 }}
                 className={cn(
-                    "text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 via-yellow-500 to-amber-600 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)] transition-all duration-100 uppercase",
+                    "text-transparent bg-clip-text bg-gradient-to-b from-blue-400 via-blue-600 to-indigo-600 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-100 uppercase",
                     isGlitching && "text-white !text-white bg-none skew-x-12 blur-[1px]"
                 )}
             >

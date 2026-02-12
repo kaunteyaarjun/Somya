@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #050505;
-  --color-foreground: #ededed;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
 
   /* Custom Colors */
-  --color-gold: #D4AF37;
-  --color-neon-amber: #FFBF00;
+  --color-gold: #3b82f6;
+  /* Pole Studios Blue */
+  --color-neon-amber: #60a5fa;
+  /* Lighter Blue */
   --color-charcoal: #121212;
 
   --font-sans: var(--font-outfit);
@@ -14,9 +16,9 @@
 }
 
 :root {
-  --background: #050505;
-  --foreground: #ededed;
-  --gold: #D4AF37;
+  --background: #000000;
+  --foreground: #ffffff;
+  --gold: #3b82f6;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
 
 ::selection {
   background-color: var(--gold);
-  color: black;
+  color: white;
 }
 
 body {
@@ -115,19 +117,19 @@ body {
 
 /* 2025 Trend: Glow Design */
 .glow-gold {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4),
-    0 0 40px rgba(212, 175, 55, 0.2),
-    0 0 60px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.2),
+    0 0 60px rgba(59, 130, 246, 0.1);
 }
 
 .glow-gold-subtle {
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2),
-    0 0 30px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2),
+    0 0 30px rgba(59, 130, 246, 0.1);
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.5),
-    0 0 50px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5),
+    0 0 50px rgba(59, 130, 246, 0.3);
   transition: box-shadow 0.3s ease;
 }
 
@@ -137,7 +139,7 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #FFD700);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
   z-index: 9999;
   transform-origin: left;
 }

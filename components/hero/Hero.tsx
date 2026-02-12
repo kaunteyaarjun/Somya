@@ -118,6 +118,9 @@ export default function Hero() {
                     className="absolute inset-0 w-full h-full object-cover"
                 />
 
+                {/* Global Dark Overlay for All Frames */}
+                <div className="absolute inset-0 bg-black/50 z-0 pointer-events-none" />
+
                 <motion.div
                     style={{ opacity: opacityVelocity }}
                     className="absolute inset-0 flex flex-col justify-center z-0"
@@ -127,39 +130,41 @@ export default function Hero() {
 
                 <motion.div
                     style={{ opacity: opacityText, scale: scaleText }}
-                    className="relative w-full h-full z-10"
+                    className="relative w-full h-full z-10 flex items-center justify-center"
                 >
-                    {/* Overlay: Left Identity */}
+                    {/* Overlay: Centered Identity */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1, duration: 1 }}
-                        style={{ y: yLeft, opacity: opacityText }}
-                        className="absolute top-[15%] md:top-[25%] left-[5%] right-[5%] md:right-auto z-10 flex flex-col space-y-4 md:space-y-6 pointer-events-none"
+                        className="relative z-10 flex flex-col items-center text-center space-y-6 md:space-y-8 pointer-events-none p-4"
                     >
-                        <div className="space-y-2">
-                            <div className="font-[family-name:var(--font-caveat)] text-gold text-lg md:text-2xl tracking-widest overflow-hidden lowercase">
+                        <div className="space-y-4">
+                            <div className="font-[family-name:var(--font-caveat)] text-gold text-xl md:text-3xl tracking-widest overflow-hidden lowercase">
                                 <TextReveal text="I see only the bird's eye." mode="masked" delay={1.5} />
                             </div>
-                            <MultilingualName />
-                            <div className="font-mono text-gray-500 text-xs md:text-sm tracking-widest pl-1 mt-1">
+
+                            <div className="transform scale-110 md:scale-125 origin-center">
+                                <MultilingualName />
+                            </div>
+
+                            <div className="font-mono text-gray-500 text-sm md:text-base tracking-widest mt-2">
                                 <TextReveal text="@kaunteyaarjun" mode="masked" delay={2.8} />
                             </div>
                         </div>
 
-                        <div className="backdrop-blur-md bg-black/30 border border-white/10 rounded-lg p-4 md:p-6 w-full md:max-w-xl shadow-2xl relative overflow-hidden group">
+                        <div className="backdrop-blur-md bg-black/40 border border-white/10 rounded-xl p-6 md:p-8 w-full max-w-2xl shadow-2xl relative overflow-hidden group hover:border-gold/30 transition-colors duration-500">
                             <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
 
-                            <div className="flex items-center space-x-2 md:space-x-3 mb-2">
-                                <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500/80" />
-                                <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500/80" />
-                                <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500/80" />
-                                <div className="h-px flex-1 bg-white/10 ml-2" />
+                            <div className="flex items-center justify-center space-x-3 mb-4">
+                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/80" />
+                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/80" />
+                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/80" />
                             </div>
 
-                            <div className="font-mono text-xs md:text-lg text-gray-300 flex items-center">
-                                <span className="text-green-400 mr-2 md:mr-3">➜</span>
-                                <span className="text-gold opacity-80 mr-2">~/role:</span>
+                            <div className="font-mono text-sm md:text-xl text-gray-300 flex items-center justify-center">
+                                <span className="text-green-400 mr-3">➜</span>
+                                <span className="text-gold opacity-80 mr-3">~/role:</span>
                                 <TypewriterEffect
                                     words={[
                                         "Cybersecurity Student",
@@ -177,37 +182,7 @@ export default function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Overlay: Right Value Prop */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.2, duration: 1 }}
-                        style={{ y: yRight }}
-                        className="absolute bottom-[20%] md:bottom-auto md:top-1/2 md:-translate-y-1/2 right-0 left-0 md:left-auto px-6 md:pr-16 text-center md:text-right max-w-lg mx-auto md:mx-0 z-10 pointer-events-none"
-                    >
-                        <div className="backdrop-blur-sm bg-black/20 p-6 md:p-8 rounded-2xl border-t-2 md:border-t-0 md:border-r-2 border-gold/50 mx-4 md:mx-0">
-                            <div className="text-xl md:text-4xl font-sans font-bold text-white mb-4 md:mb-6 leading-tight flex flex-col md:items-end items-center">
-                                <TextReveal text="Securing the Future." mode="masked" delay={2} />
-                                <div className="flex flex-wrap justify-center md:justify-end gap-x-[0.25em]">
-                                    <TextReveal text="Designing the" mode="masked" delay={2.4} />
-                                    <TextReveal
-                                        text="Experience."
-                                        mode="masked"
-                                        delay={2.6}
-                                        className="text-transparent bg-clip-text bg-gradient-to-l from-gold to-amber-200"
-                                    />
-                                </div>
-                            </div>
-                            <div className="text-gray-400 leading-relaxed font-mono text-xs md:text-base flex md:justify-end justify-center">
-                                <TextReveal
-                                    text="I bridge the gap between aesthetic design and impenetrable security."
-                                    mode="masked"
-                                    delay={3}
-                                    className="max-w-md text-center md:text-right"
-                                />
-                            </div>
-                        </div>
-                    </motion.div>
+
 
                     {/* Socials */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">

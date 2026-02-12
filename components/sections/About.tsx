@@ -25,7 +25,7 @@ export default function About() {
                         </div>
 
                         <div className="mt-8 font-mono text-sm text-gray-300 space-y-4">
-                            <p className="text-gold">$ cat bio.txt</p>
+                            <p className="text-blue-400">$ cat bio.txt</p>
                             <p>
                                 A multidisciplinary creator at the intersection of <span className="text-white font-bold">cybersecurity</span>,
                                 <span className="text-white font-bold"> design</span>, and <span className="text-white font-bold">development</span>.
@@ -45,7 +45,7 @@ export default function About() {
                     {/* Stats/Highlights */}
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-5xl font-sans font-bold text-white">
-                            Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-300">Future</span>
+                            Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600">Future</span>
                         </h2>
 
                         <p className="text-gray-400 leading-relaxed">
@@ -60,8 +60,8 @@ export default function About() {
                                 { label: "Clients Served", value: "10+" },
                                 { label: "Lines of Code", value: "50K+" },
                             ].map((stat) => (
-                                <div key={stat.label} className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                                    <div className="text-2xl md:text-3xl font-bold text-gold">{stat.value}</div>
+                                <div key={stat.label} className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 text-center hover:border-blue-500/30 transition-colors">
+                                    <div className="text-2xl md:text-3xl font-bold text-blue-500">{stat.value}</div>
                                     <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mt-1">{stat.label}</div>
                                 </div>
                             ))}
