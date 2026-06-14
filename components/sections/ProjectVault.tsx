@@ -3,40 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-
-const PROJECTS = [
-    {
-        title: "Kaunteya Studios",
-        description: "Premium game studio and creative agency website with immersive animations.",
-        image: "/project-kaunteya-real.png",
-        tags: ["Next.js", "Framer Motion", "3D"],
-        status: "Active",
-        url: "https://kaunteyaarjun.pages.dev"
-    },
-    {
-        title: "Polarity Engine",
-        description: "Advanced Discord bot with AI integration, moderation, and community features.",
-        image: "/polarity-logo.png",
-        tags: ["Python", "Discord.py", "MongoDB", "AI"],
-        status: "Active",
-        url: "#"
-    },
-    {
-        title: "Pole Studios",
-        description: "Creative branding and design consultancy for luxury brands.",
-        image: "/project-pole.png",
-        tags: ["Branding", "UI/UX", "Identity"],
-        status: "Active",
-        url: "#"
-    },
-];
+import Link from "next/link";
+import { PROJECTS } from "@/lib/data";
 
 export default function ProjectVault() {
     return (
         <section id="work" className="py-24 px-6 md:px-16 bg-background relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-gold/5 via-transparent to-gold/5 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
 
-            <div className="max-w-6xl mx-auto relative z-10">
+            <div className="max-w-4xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -45,70 +20,58 @@ export default function ProjectVault() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-sans font-bold text-white mb-4">
-                        Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-amber-300">Vault</span>
+                        Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Work</span>
                     </h2>
-                    <p className="text-gray-400 font-mono text-sm">// Selected works from the archive</p>
+                    <p className="text-gray-400 font-sans text-sm tracking-widest uppercase">Selected projects</p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-8">
                     {PROJECTS.map((project, index) => (
-                        <motion.div
-                            key={project.title}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <Tilt
-                                tiltMaxAngleX={10}
-                                tiltMaxAngleY={10}
-                                perspective={1000}
-                                scale={1.02}
-                                transitionSpeed={400}
-                                glareEnable={true}
-                                glareMaxOpacity={0.15}
-                                glareColor="#D4AF37"
-                                glarePosition="all"
-                                glareBorderRadius="16px"
+                            <motion.div
+                                key={project.slug}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
                             >
-                                <a
-                                    href={project.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group block relative backdrop-blur-md bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-gold/50 hover-glow transition-all duration-500"
+                                <Link
+                                    href={`/work/${project.slug}`}
+                                    className="group block relative transition-all duration-500"
                                 >
                                     {/* Image */}
-                                    <div className="relative h-48 overflow-hidden">
+                                    <div className="relative h-64 md:h-80 w-full overflow-hidden mb-8 bg-white/5">
                                         <Image
                                             src={project.image}
                                             alt={project.title}
                                             fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700" />
 
                                         {/* Status Badge */}
-                                        <div className="absolute top-4 right-4 px-3 py-1 bg-green-500/20 border border-green-500/50 rounded-full glow-gold-subtle">
-                                            <span className="text-xs font-mono text-green-400">{project.status}</span>
+                                        <div className="absolute top-4 right-4 px-4 py-1.5 bg-white shadow-lg">
+                                            <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-black">{project.status}</span>
                                         </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-6">
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors">{project.title}</h3>
-                                        <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                                    <div>
+                                        <h3 className="text-2xl md:text-3xl font-bold font-sans text-white mb-4 group-hover:text-gray-300 transition-colors flex items-center justify-between tracking-tight">
+                                            {project.title}
+                                            <span className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-4 group-hover:translate-x-0">&rarr;</span>
+                                        </h3>
+                                        <p className="text-gray-400 text-base font-light leading-relaxed mb-6">{project.description}</p>
 
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex flex-wrap gap-4">
                                             {project.tags.map((tag) => (
-                                                <span key={tag} className="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs font-mono text-gray-500">
+                                                <span key={tag} className="text-xs font-sans text-gray-500 uppercase tracking-widest">
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
-                                </a>
-                            </Tilt>
-                        </motion.div>
+                                </Link>
+                            </motion.div>
                     ))}
                 </div>
             </div>

@@ -61,7 +61,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 export default function VelocityScroll() {
     return (
         <div className="w-full py-12 md:py-24 space-y-8 overflow-hidden opacity-30 select-none pointer-events-none mix-blend-overlay">
-            <ParallaxText baseVelocity={-2}>LUXURY • SECURITY • SYSTEMS •</ParallaxText>
+            <ParallaxText baseVelocity={-2}>NEXT.JS • BRANDING • CINEMATIC •</ParallaxText>
             <ParallaxText baseVelocity={2}>DESIGN • DEVELOPMENT • INNOVATION •</ParallaxText>
         </div>
     );

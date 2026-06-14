@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 const TESTIMONIALS = [
     {
         name: "Alex Rivera",
-        role: "Digital Marketing Specialist",
-        company: "Google",
-        text: "Somya's ability to translate complex user needs into elegant, high-performance interfaces is unmatched. A true visionary in the UX space.",
+        role: "Startup Founder",
+        company: "Client",
+        text: "Somya's ability to translate complex business goals into polished, production-grade products is unmatched. A true visionary in the web development space.",
         signal: 98
     },
     {
@@ -38,9 +38,9 @@ export default function Testimonials() {
                     className="mb-16 text-center"
                 >
                     <h2 className="text-3xl md:text-5xl font-sans font-bold mb-4">
-                        Network <span className="text-gold">Handshakes</span>
+                        Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Endorsements</span>
                     </h2>
-                    <div className="h-0.5 w-12 bg-gold mx-auto" />
+                    <div className="h-[1px] w-12 bg-gradient-to-r from-white/40 to-transparent mx-auto" />
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -51,28 +51,22 @@ export default function Testimonials() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="bg-white/5 border border-white/10 p-8 rounded-2xl relative overflow-hidden backdrop-blur-sm hover:border-gold/30 transition-all duration-300"
+                            className="bg-white/[0.02] border border-white/5 p-10 rounded-3xl relative overflow-hidden backdrop-blur-sm hover:border-white/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/5 group"
                         >
-                            {/* Signal Indicator */}
-                            <div className="absolute top-4 right-4 flex items-center space-x-2">
-                                <span className="text-[10px] font-mono text-gray-500">SIGNAL</span>
-                                <div className="h-1 w-8 bg-gray-800 rounded-full overflow-hidden">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${t.signal}%` }}
-                                        transition={{ duration: 1, delay: 0.5 + (index * 0.2) }}
-                                        className="h-full bg-green-500"
-                                    />
-                                </div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            
+                            {/* Elegant Quote Mark */}
+                            <div className="absolute top-6 right-8 text-6xl font-serif text-white/5 select-none pointer-events-none">
+                                "
                             </div>
 
-                            <p className="text-gray-300 italic mb-8 leading-relaxed">
+                            <p className="text-gray-400 font-light italic mb-10 leading-relaxed relative z-10 text-sm md:text-base">
                                 "{t.text}"
                             </p>
 
-                            <div>
-                                <h4 className="font-sans font-bold text-white">{t.name}</h4>
-                                <p className="text-xs font-mono text-gold">{t.role} @ {t.company}</p>
+                            <div className="relative z-10 mt-auto">
+                                <h4 className="font-sans font-medium text-gray-200">{t.name}</h4>
+                                <p className="text-xs font-sans text-gray-500 mt-1 uppercase tracking-wider">{t.role} @ {t.company}</p>
                             </div>
                         </motion.div>
                     ))}

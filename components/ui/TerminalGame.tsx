@@ -60,10 +60,11 @@ export default function TerminalGame() {
                     content: (
                         <div className="space-y-2">
                             <div><span className="text-gold">Name:</span> Somya Prasad Sethy</div>
-                            <div><span className="text-gold">Role:</span> Staff UX Designer @ Google</div>
-                            <div><span className="text-gold">Side Quest:</span> Founder @ Pole Studios</div>
-                            <div><span className="text-gold">Mission:</span> Orchestrating user-centric design solutions.</div>
-                            <div><span className="text-gold">Status:</span> <span className="text-green-400">ONLINE</span></div>
+                            <div><span className="text-gold">Role:</span> Next.js Developer & Branding Consultant</div>
+                            <div><span className="text-gold">Venture:</span> Founder @ Pole Studios</div>
+                            <div><span className="text-gold">Mission:</span> Building immersive, high-performance web applications.</div>
+                            <div><span className="text-gold">Location:</span> Cuttack, Odisha, India</div>
+                            <div><span className="text-gold">Status:</span> <span className="text-green-400">OPEN TO REMOTE ROLES</span></div>
                         </div>
                     ),
                 });
@@ -75,12 +76,12 @@ export default function TerminalGame() {
                     content: (
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <div className="text-xs text-gray-500 mb-1">DESIGN</div>
-                                <div className="text-blue-400">Figma, After Effects, Spline, Blender</div>
+                                <div className="text-xs text-gray-500 mb-1">FRONTEND</div>
+                                <div className="text-blue-400">Next.js, React, TypeScript, GSAP, HTML5, CSS3</div>
                             </div>
                             <div>
-                                <div className="text-xs text-gray-500 mb-1">DEV</div>
-                                <div className="text-green-400">Next.js, React, Tailwind, Framer Motion</div>
+                                <div className="text-xs text-gray-500 mb-1">TOOLS & CREATIVE</div>
+                                <div className="text-green-400">Figma, Node.js, Motion Graphics, Video Editing, AI Workflows</div>
                             </div>
                         </div>
                     ),
@@ -96,9 +97,8 @@ export default function TerminalGame() {
                     type: "success",
                     content: (
                         <ul className="list-disc pl-5">
-                            <li><span className="text-gold">POLE Agency</span> - Cosmic Web Experience</li>
-                            <li><span className="text-gold">Kaunteya Studios</span> - VFX & Branding</li>
-                            <li><span className="text-gold">Polarity Engine</span> - Discord Ecosystem</li>
+                            <li><span className="text-gold">Pole Studios</span> - Branding & Web Dev Studio → <a href="https://polestudios.in" target="_blank" className="underline hover:text-gold">polestudios.in</a></li>
+                            <li><span className="text-gold">DMS Photography</span> - Photography Portfolio → <a href="https://dmsphotography.in" target="_blank" className="underline hover:text-gold">dmsphotography.in</a></li>
                         </ul>
                     )
                 });
@@ -115,7 +115,7 @@ export default function TerminalGame() {
                                 <a href="https://twitter.com/kaunteyaarjun" target="_blank" className="underline hover:text-gold">Twitter</a>
                             </div>
                             <div>
-                                <span className="text-gold">Email:</span> <a href="mailto:polestudios@mail.ru" className="hover:text-white transition-colors">polestudios@mail.ru</a>
+                                <span className="text-gold">Email:</span> <a href="mailto:teams@polestudios.in" className="hover:text-white transition-colors">teams@polestudios.in</a>
                             </div>
                         </div>
                     )

@@ -1,0 +1,50 @@
+# Kaunteya Arjun (Somya Prasad Sethy)
+
+> CyberSecurity Researcher & Full Stack Engineer from Cuttack, Odisha, India.
+
+Kaunteya Arjun, also known as Somya Prasad Sethy (online handle: Kaunteyaarjun), is a CyberSecurity Researcher and Full Stack Engineer focused on building resilient, scalable systems. He specializes in merging high-performance backend logic with intuitive frontend design.
+
+## Identity
+
+- **Full Name**: Somya Prasad Sethy
+- **Known As**: Kaunteya Arjun, Kaunteyaarjun, Kaunteya, Somya
+- **Title**: CyberSecurity Researcher & Full Stack Engineer
+- **Location**: Cuttack, Odisha, India
+- **Website**: https://somya.pages.dev
+- **GitHub**: https://github.com/kaunteyaarjun
+- **LinkedIn**: https://www.linkedin.com/in/somyaprasadsethy/
+- **Twitter/X**: https://twitter.com/kaunteyaarjun
+- **Instagram**: https://www.instagram.com/kaunteyaarjun/
+- **Email**: teams@polestudios.in
+
+## Expertise
+
+- CyberSecurity Research & Penetration Testing
+- Full Stack Web Development (Next.js, React, TypeScript, Node.js)
+- High-Performance UI Design with GSAP & Framer Motion
+- Branding & Digital Product Strategy
+- Scalable Backend Architecture & API Design
+- Web Application Security
+
+## Professional Background
+
+### Founder & Branding Consultant — Pole Studios (Oct 2025 – Present)
+Founded and operates a branding and web development studio delivering commercial websites and digital products. Developed a streamlined requirements-gathering process that reduced project delivery time by 15%.
+
+### Web Developer (Next.js) — Freelance (Jul 2023 – Oct 2025)
+Engineered and deployed immersive Next.js applications for various clients, consistently exceeding performance benchmarks. Recognised for cinematic UI design, GSAP animations, and smooth full-stack architecture.
+
+### Video Editor — Freelance (Jan 2023 – Oct 2025)
+Collaborated with content creators on documentary and short-form video projects. Created dynamic motion graphics and tracked engagement metrics to optimise viewer retention.
+
+## Projects
+
+### Pole Studios (https://polestudios.in)
+Full-service branding and web development agency. High-performance, cinematic web experiences combining cutting-edge technology with premium design aesthetics. Built with Next.js, React, TypeScript, Tailwind CSS, Framer Motion, and GSAP.
+
+### DMS Photography (https://dmsphotography.in)
+High-end photography portfolio with immersive gallery experience and cinematic presentation. Optimized delivery of hundreds of high-resolution images with custom masonry grid layouts. Built with Next.js, React, Tailwind CSS, and Framer Motion.
+
+## Technology Stack
+
+Next.js, React, TypeScript, Node.js, Tailwind CSS, GSAP, Framer Motion, Figma, VS Code, Vercel, Sanity CMS, Premiere Pro, After Effects, DaVinci Resolve

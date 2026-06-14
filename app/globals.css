@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "./hyper.css";
 
 @theme {
   --color-background: #000000;
@@ -143,3 +145,4 @@ body {
   z-index: 9999;
   transform-origin: left;
 }
+

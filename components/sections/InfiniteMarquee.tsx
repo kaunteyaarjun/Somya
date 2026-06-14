@@ -4,47 +4,35 @@ import { motion } from "framer-motion";
 import {
     SiFigma,
     SiAdobeaftereffects,
-    SiBlender,
     SiNextdotjs,
     SiReact,
     SiTypescript,
     SiTailwindcss,
     SiFramer,
-    SiThreedotjs,
-    SiGodotengine,
-    SiKalilinux,
-    SiCinema4D,
-    SiAdobecreativecloud,
-    SiUnrealengine,
-    SiAutodeskmaya, // Verified verified import
+    SiGreensock,
+    SiNodedotjs,
+    SiHtml5,
+    SiCss3,
     SiPython,
-    SiRust,
-    SiDocker,
-    SiWireshark
+    SiAdobecreativecloud
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 const TECHNOLOGIES = [
-    { name: "VS Code", Icon: VscVscode },
-    { name: "Figma", Icon: SiFigma },
-    { name: "After Effects", Icon: SiAdobeaftereffects },
-    { name: "Blender", Icon: SiBlender },
     { name: "Next.js", Icon: SiNextdotjs },
     { name: "React", Icon: SiReact },
     { name: "TypeScript", Icon: SiTypescript },
+    { name: "GSAP", Icon: SiGreensock },
     { name: "Tailwind CSS", Icon: SiTailwindcss },
+    { name: "Node.js", Icon: SiNodedotjs },
+    { name: "HTML5", Icon: SiHtml5 },
+    { name: "CSS3", Icon: SiCss3 },
+    { name: "Figma", Icon: SiFigma },
+    { name: "VS Code", Icon: VscVscode },
     { name: "Framer Motion", Icon: SiFramer },
-    { name: "Three.js", Icon: SiThreedotjs },
-    { name: "Godot Engine", Icon: SiGodotengine },
-    { name: "Kali Linux", Icon: SiKalilinux },
-    { name: "Cinema 4D", Icon: SiCinema4D },
+    { name: "After Effects", Icon: SiAdobeaftereffects },
     { name: "Adobe Creative Cloud", Icon: SiAdobecreativecloud },
-    { name: "Unreal Engine", Icon: SiUnrealengine },
-    { name: "Maya", Icon: SiAutodeskmaya },
     { name: "Python", Icon: SiPython },
-    { name: "Rust", Icon: SiRust },
-    { name: "Docker", Icon: SiDocker },
-    { name: "Wireshark", Icon: SiWireshark },
 ];
 
 export default function InfiniteMarquee() {
@@ -68,7 +56,7 @@ export default function InfiniteMarquee() {
                     {[...TECHNOLOGIES, ...TECHNOLOGIES, ...TECHNOLOGIES, ...TECHNOLOGIES].map((tech, index) => (
                         <div key={index} className="group relative flex items-center justify-center p-4 min-w-[80px] h-[80px] grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100 hover:scale-110 cursor-help">
                             {/* Glow Effect on Hover */}
-                            <div className="absolute inset-0 bg-gold/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-white/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <tech.Icon
                                 className="w-12 h-12 md:w-16 md:h-16 text-white drop-shadow-lg transition-all duration-300"

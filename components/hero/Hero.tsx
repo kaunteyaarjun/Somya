@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, useMotionValueEvent, motion } from "framer-motion";
+import { useScroll, useTransform, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
 import Loader from "@/components/hero/Loader";
 import { cn } from "@/lib/utils";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
@@ -106,12 +106,14 @@ export default function Hero() {
     }, [isLoading, images, scrollY]);
 
 
-    if (isLoading) {
-        return <Loader progress={progress} />;
-    }
-
     return (
-        <section id="hero" className="relative w-full bg-background" style={{ height: `${SCROLL_HEIGHT}px` }}>
+        <>
+            <AnimatePresence mode="wait">
+                {isLoading && <Loader key="loader" progress={progress} />}
+            </AnimatePresence>
+
+            {!isLoading && (
+                <section id="hero" className="relative w-full bg-background" style={{ height: `${SCROLL_HEIGHT}px` }}>
             <div className="sticky top-0 h-screen w-full overflow-hidden">
                 <canvas
                     ref={canvasRef}
@@ -130,53 +132,38 @@ export default function Hero() {
 
                 <motion.div
                     style={{ opacity: opacityText, scale: scaleText }}
-                    className="relative w-full h-full z-10 flex items-center justify-center"
+                    className="relative w-full h-full z-10 flex items-center justify-start px-8 md:px-24 lg:px-32"
                 >
-                    {/* Overlay: Centered Identity */}
+                    {/* Overlay: Left-Aligned Identity */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1, duration: 1 }}
-                        className="relative z-10 flex flex-col items-center text-center space-y-6 md:space-y-8 pointer-events-none p-4"
+                        className="relative z-10 flex flex-col items-start text-left space-y-8 pointer-events-none max-w-4xl"
                     >
-                        <div className="space-y-4">
-                            <div className="font-[family-name:var(--font-caveat)] text-gold text-xl md:text-3xl tracking-widest overflow-hidden lowercase">
-                                <TextReveal text="I see only the bird's eye." mode="masked" delay={1.5} />
-                            </div>
-
-                            <div className="transform scale-110 md:scale-125 origin-center">
-                                <MultilingualName />
-                            </div>
-
-                            <div className="font-mono text-gray-500 text-sm md:text-base tracking-widest mt-2">
-                                <TextReveal text="@kaunteyaarjun" mode="masked" delay={2.8} />
-                            </div>
+                        <div className="space-y-6">
+                            <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-sans font-bold tracking-tighter leading-[0.85] text-white">
+                                SOMYA<br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">PRASAD.</span>
+                            </h1>
+                            
+                            <p className="text-lg md:text-2xl font-light text-gray-300 max-w-xl leading-relaxed">
+                                Crafting cinematic digital experiences and high-performance interfaces for bold brands.
+                            </p>
                         </div>
 
-                        <div className="backdrop-blur-md bg-black/40 border border-white/10 rounded-xl p-6 md:p-8 w-full max-w-2xl shadow-2xl relative overflow-hidden group hover:border-gold/30 transition-colors duration-500">
-                            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-
-                            <div className="flex items-center justify-center space-x-3 mb-4">
-                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/80" />
-                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/80" />
-                                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/80" />
-                            </div>
-
-                            <div className="font-mono text-sm md:text-xl text-gray-300 flex items-center justify-center">
-                                <span className="text-green-400 mr-3">➜</span>
-                                <span className="text-gold opacity-80 mr-3">~/role:</span>
+                        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-8 py-4 shadow-2xl relative overflow-hidden group hover:border-white/30 transition-colors duration-500 pointer-events-auto">
+                            <div className="font-sans text-sm md:text-lg text-gray-300 flex items-center justify-start font-light tracking-wide">
+                                <span className="text-white/50 mr-3">Role:</span>
                                 <TypewriterEffect
                                     words={[
-                                        "Cybersecurity Student",
-                                        "UX Designer",
-                                        "Full Stack Dev",
-                                        "AI & Innovation",
-                                        "Graphic Designer",
-                                        "Branding Consultant",
-                                        "Game Engine Physics Optimizer",
-                                        "3D Artist"
+                                        "Next.js Developer",
+                                        "Creative Director",
+                                        "UI/UX Designer",
+                                        "CyberSecurity Researcher",
+                                        "Cinematographer"
                                     ]}
-                                    className="text-white font-bold tracking-wide"
+                                    className="text-white font-medium"
                                 />
                             </div>
                         </div>
@@ -186,20 +173,20 @@ export default function Hero() {
 
                     {/* Socials */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-                        <div className="flex space-x-6 px-8 py-3 bg-black/30 backdrop-blur-md border border-white/10 rounded-full shadow-lg hover:border-gold/30 transition-colors duration-300">
+                        <div className="flex space-x-6 px-8 py-3 bg-black/30 backdrop-blur-md border border-white/10 rounded-full shadow-lg hover:border-white/30 transition-colors duration-300">
                             {[
                                 { name: "GitHub", url: "https://github.com/kaunteyaarjun" },
                                 { name: "LinkedIn", url: "https://www.linkedin.com/in/somyaprasadsethy/" },
                                 { name: "Instagram", url: "https://www.instagram.com/kaunteyaarjun/" },
                                 { name: "Twitter", url: "https://twitter.com/kaunteyaarjun" },
-                                { name: "Email", url: "mailto:polestudios@mail.ru" }
+                                { name: "Email", url: "mailto:teams@polestudios.in" }
                             ].map(social => (
                                 <Magnetic key={social.name}>
                                     <a
                                         href={social.url}
                                         target={social.url !== "#" ? "_blank" : "_self"}
                                         rel="noopener noreferrer"
-                                        className="text-xs font-mono uppercase tracking-widest text-gray-400 hover:text-gold transition-colors block py-1"
+                                        className="text-xs font-mono uppercase tracking-widest text-gray-400 hover:text-white transition-colors block py-1"
                                     >
                                         {social.name}
                                     </a>
@@ -207,21 +194,10 @@ export default function Hero() {
                             ))}
                         </div>
                     </div>
-
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 3.5, duration: 1 }}
-                        className="absolute bottom-8 right-8 z-20 flex flex-col items-center gap-2 pointer-events-none mix-blend-difference"
-                    >
-                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gold/80 animate-pulse">
-                            Scroll for optimal experience
-                        </span>
-                        <div className="w-[1px] h-12 bg-gradient-to-b from-gold/0 via-gold/50 to-gold/0" />
-                    </motion.div>
                 </motion.div>
             </div>
-        </section>
+                </section>
+            )}
+        </>
     );
 }
