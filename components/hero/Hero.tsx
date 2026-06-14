@@ -152,20 +152,33 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-8 py-4 shadow-2xl relative overflow-hidden group hover:border-white/30 transition-colors duration-500 pointer-events-auto">
-                            <div className="font-sans text-sm md:text-lg text-gray-300 flex items-center justify-start font-light tracking-wide">
-                                <span className="text-white/50 mr-3">Role:</span>
-                                <TypewriterEffect
-                                    words={[
-                                        "Next.js Developer",
-                                        "Creative Director",
-                                        "UI/UX Designer",
-                                        "CyberSecurity Researcher",
-                                        "Cinematographer"
-                                    ]}
-                                    className="text-white font-medium"
-                                />
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pointer-events-auto mt-4">
+                            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-8 py-4 shadow-2xl relative overflow-hidden group hover:border-white/30 transition-colors duration-500">
+                                <div className="font-sans text-sm md:text-lg text-gray-300 flex items-center justify-start font-light tracking-wide">
+                                    <span className="text-white/50 mr-3">Role:</span>
+                                    <TypewriterEffect
+                                        words={[
+                                            "Next.js Developer",
+                                            "Creative Director",
+                                            "UI/UX Designer",
+                                            "CyberSecurity Researcher",
+                                            "Cinematographer"
+                                        ]}
+                                        className="text-white font-medium"
+                                    />
+                                </div>
                             </div>
+
+                            <a 
+                                href="/Somya_Prasad_Sethy_Resume.pdf" 
+                                download="Somya_Prasad_Sethy_Resume.pdf"
+                                className="group backdrop-blur-md bg-white text-black font-sans font-bold text-xs md:text-sm uppercase tracking-widest px-8 py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:scale-105 transition-all duration-300 flex items-center gap-3"
+                            >
+                                <span>Download CV</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:translate-y-1 transition-transform duration-300">
+                                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z" fill="currentColor"/>
+                                </svg>
+                            </a>
                         </div>
                     </motion.div>
 
