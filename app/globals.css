@@ -34,9 +34,11 @@ body {
   color: white;
 }
 
-body {
-  cursor: none;
-  /* Hide default cursor */
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+    /* Hide default cursor on desktop */
+  }
 }
 
 @layer base {
