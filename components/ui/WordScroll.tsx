@@ -49,8 +49,8 @@ export default function WordScroll({ prefix = "I build", words, className }: Wor
 
                 {/* Scrolling Right Side */}
                 <div className="w-1/2 flex justify-start">
-                    {/* Added pb-[50vh] so the last words can reach the center sticky point before the page ends */}
-                    <ul className="m-0 p-0 list-none text-left pb-[50vh]">
+                    {/* Added pb-[20vh] so the last words reach the center sticky point without excessive dead space */}
+                    <ul className="m-0 p-0 list-none text-left pb-[20vh]">
                         {words.map((word, index) => (
                             <Word key={index}>{word}</Word>
                         ))}
