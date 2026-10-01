@@ -1,216 +1,117 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, useMotionValueEvent, motion, AnimatePresence } from "framer-motion";
-import Loader from "@/components/hero/Loader";
-import { cn } from "@/lib/utils";
-import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
-import { TextReveal } from "@/components/ui/TextReveal";
-import Magnetic from "@/components/ui/Magnetic";
-import MultilingualName from "@/components/hero/MultilingualName";
-import VelocityScroll from "@/components/ui/VelocityScroll";
-import HyperText from "@/components/ui/HyperText";
-
-const TOTAL_FRAMES = 180;
-const FRAME_HEIGHT = 1080;
-const FRAME_WIDTH = 1920;
-const SCROLL_HEIGHT = 4000;
-
-const currentFrame = (index: number) => {
-    const paddedIndex = index.toString().padStart(3, "0");
-    return `/hero-frames/frame_${paddedIndex}.webp`;
-};
+import { motion } from "framer-motion";
+import ArchitectureDiagram from "@/components/hero/ArchitectureDiagram";
 
 export default function Hero() {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [images, setImages] = useState<HTMLImageElement[]>([]);
-    const [progress, setProgress] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
-
-    const { scrollY } = useScroll();
-    const frameIndex = useTransform(scrollY, [0, SCROLL_HEIGHT], [0, TOTAL_FRAMES - 1]);
-
-    const yLeft = useTransform(scrollY, [0, SCROLL_HEIGHT], [0, 300]);
-    const yRight = useTransform(scrollY, [0, SCROLL_HEIGHT], [0, -300]);
-    const opacityText = useTransform(scrollY, [0, 400, 900], [1, 1, 0]);
-    const scaleText = useTransform(scrollY, [0, 900], [1, 0.8]);
-    const opacityVelocity = useTransform(scrollY, [900, 1400, 3800], [0, 1, 0]);
-
-    useEffect(() => {
-        let loadedCount = 0;
-        const loadedImages: HTMLImageElement[] = [];
-
-        const loadImages = async () => {
-            for (let i = 0; i < TOTAL_FRAMES; i++) {
-                const img = new Image();
-                img.src = currentFrame(i);
-
-                img.onload = () => {
-                    loadedCount++;
-                    setProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100));
-                    if (loadedCount === TOTAL_FRAMES) {
-                        // Artificial delay for cinematic feel
-                        setTimeout(() => {
-                            setIsLoading(false);
-                        }, 3500);
-                    }
-                };
-                loadedImages.push(img);
-            }
-            setImages(loadedImages);
-        };
-
-        loadImages();
-    }, []);
-
-    const renderFrame = (index: number) => {
-        const canvas = canvasRef.current;
-        if (!canvas || images.length === 0) return;
-
-        const context = canvas.getContext("2d");
-        if (!context) return;
-
-        const img = images[index];
-        if (!img) return;
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
-        const x = (canvas.width / 2) - (img.width / 2) * scale;
-        const y = (canvas.height / 2) - (img.height / 2) * scale;
-
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(img, x, y, img.width * scale, img.height * scale);
-    };
-
-    useMotionValueEvent(frameIndex, "change", (latest) => {
-        const safeIndex = Math.min(Math.max(Math.floor(latest), 0), TOTAL_FRAMES - 1);
-        requestAnimationFrame(() => renderFrame(safeIndex));
-    });
-
-    useEffect(() => {
-        if (!isLoading && images.length > 0) {
-            renderFrame(0);
-        }
-    }, [isLoading, images]);
-
-    useEffect(() => {
-        const handleResize = () => {
-            const currentScroll = scrollY.get();
-            const currentIndex = Math.min(Math.max(Math.floor((currentScroll / SCROLL_HEIGHT) * (TOTAL_FRAMES - 1)), 0), TOTAL_FRAMES - 1);
-            renderFrame(currentIndex);
-        }
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [isLoading, images, scrollY]);
-
-
     return (
-        <>
-            <AnimatePresence mode="wait">
-                {isLoading && <Loader key="loader" progress={progress} />}
-            </AnimatePresence>
+        <section id="hero" className="relative w-full bg-[#0a0a0a] text-white border-b-4 border-white/10 overflow-hidden pt-20">
+            {/* Top Ticker Marquee */}
+            <div className="w-full bg-[#141416] border-b-2 border-white/10 py-2.5 overflow-hidden whitespace-nowrap select-none font-mono text-xs font-bold tracking-[0.15em] text-white/90">
+                <div className="inline-block animate-marquee">
+                    <span>✦ SOMYA PRASAD SETHY</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>FULL-STACK DEVELOPER & BACKEND ENGINEER</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>I BUILD BACKEND SYSTEMS, DEVELOPER TOOLING & FAST WEB PRODUCTS</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>FOUNDER OF POLE STUDIOS</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>GO • RUST • TYPESCRIPT • NEXT.JS • gRPC</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>OPEN TO REMOTE ROLES WORLDWIDE</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>✦ SOMYA PRASAD SETHY</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>FULL-STACK DEVELOPER & BACKEND ENGINEER</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                    <span>I BUILD BACKEND SYSTEMS, DEVELOPER TOOLING & FAST WEB PRODUCTS</span>
+                    <span className="mx-6 text-emerald-400">•</span>
+                </div>
+            </div>
 
-            {!isLoading && (
-                <section id="hero" className="relative w-full bg-background" style={{ height: `${SCROLL_HEIGHT}px` }}>
-            <div className="sticky top-0 h-screen w-full overflow-hidden">
-                <canvas
-                    ref={canvasRef}
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+            {/* Hero Main Grid (Inspired by 'It Was Never A Competition') */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-130px)]">
+                {/* Left Column: Editorial Information */}
+                <div className="lg:col-span-7 p-8 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-center relative lg:border-r-4 border-white/10 z-10">
+                    {/* Ghost Background Typography */}
+                    <div className="absolute top-2 left-2 text-[14vw] lg:text-[10vw] font-sans font-black text-white/[0.025] pointer-events-none select-none leading-none z-0">
+                        SYSTEMS
+                    </div>
 
-                {/* Global Dark Overlay for All Frames */}
-                <div className="absolute inset-0 bg-black/50 z-0 pointer-events-none" />
+                    <div className="relative z-10 space-y-6 max-w-2xl">
+                        {/* Section Tag Chip */}
+                        <div className="inline-flex items-center gap-2 border-2 border-white/20 bg-white/5 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+                            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                            <span>✦ Full-Stack Developer | Backend Engineer | Creative Developer</span>
+                        </div>
 
-                <motion.div
-                    style={{ opacity: opacityVelocity }}
-                    className="absolute inset-0 flex flex-col justify-center z-0"
-                >
-                    <VelocityScroll />
-                </motion.div>
+                        {/* Heavy Display Title */}
+                        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-sans font-black tracking-tighter leading-[0.9] text-white uppercase">
+                            <span>SOMYA</span><br />
+                            <span>PRASAD</span><br />
+                            <span className="stroke">SETHY.</span>
+                        </h1>
 
-                <motion.div
-                    style={{ opacity: opacityText, scale: scaleText }}
-                    className="relative w-full h-full z-10 flex items-center justify-start px-8 md:px-24 lg:px-32"
-                >
-                    {/* Overlay: Left-Aligned Identity */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="relative z-10 flex flex-col items-start text-left space-y-8 pointer-events-none max-w-4xl"
-                    >
-                        <div className="space-y-6">
-                            <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-sans font-bold tracking-tighter leading-[0.85] text-white">
-                                SOMYA<br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">PRASAD.</span>
-                            </h1>
-                            
-                            <p className="text-lg md:text-2xl font-light text-gray-300 max-w-xl leading-relaxed">
-                                Crafting cinematic digital experiences and high-performance interfaces for bold brands.
+                        {/* Concrete Copy & Tightened Bio */}
+                        <div className="space-y-4 pt-2">
+                            <p className="font-mono text-sm sm:text-base text-gray-200 leading-relaxed font-medium">
+                                // I build backend systems, developer tooling and fast web products.
+                            </p>
+                            <p className="font-sans text-xs sm:text-sm text-gray-400 leading-relaxed font-light">
+                                Self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. Founder of Pole Studios, a branding and web development studio operating on zero external capital. Open to remote roles worldwide.
                             </p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pointer-events-auto mt-4">
-                            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-8 py-4 shadow-2xl relative overflow-hidden group hover:border-white/30 transition-colors duration-500">
-                                <div className="font-sans text-sm md:text-lg text-gray-300 flex items-center justify-start font-light tracking-wide">
-                                    <span className="text-white/50 mr-3">Role:</span>
-                                    <TypewriterEffect
-                                        words={[
-                                            "Next.js Developer",
-                                            "Creative Director",
-                                            "UI/UX Designer",
-                                            "CyberSecurity Researcher",
-                                            "Cinematographer"
-                                        ]}
-                                        className="text-white font-medium"
-                                    />
-                                </div>
-                            </div>
-
-                            <a 
-                                href="/Somya_Prasad_Sethy_Resume.pdf" 
+                        {/* Action Chips (Rectangular Brutalist, NO PILL ICONS) */}
+                        <div className="flex flex-wrap items-center gap-3 pt-4">
+                            <a
+                                href="/Somya_Prasad_Sethy_Resume.pdf"
                                 download="Somya_Prasad_Sethy_Resume.pdf"
-                                className="group backdrop-blur-md bg-white text-black font-sans font-bold text-xs md:text-sm uppercase tracking-widest px-8 py-4 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] hover:scale-105 transition-all duration-300 flex items-center gap-3"
+                                className="border-2 border-white bg-white text-black font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 hover:bg-transparent hover:text-white transition-all duration-200 shadow-[4px_4px_0_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
                             >
-                                <span>Download CV</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:translate-y-1 transition-transform duration-300">
-                                    <path d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z" fill="currentColor"/>
-                                </svg>
+                                [ ⬇ DOWNLOAD CV ]
+                            </a>
+                            <a
+                                href="#work"
+                                className="border-2 border-white/30 text-white font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 hover:border-white hover:bg-white/10 transition-all duration-200 shadow-[4px_4px_0_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
+                                [ FEATURED WORK ]
+                            </a>
+                            <a
+                                href="#contact"
+                                className="border-2 border-white/30 text-white font-mono font-bold text-xs uppercase tracking-widest px-6 py-3.5 hover:border-white hover:bg-white/10 transition-all duration-200 shadow-[4px_4px_0_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                            >
+                                [ GET IN TOUCH ]
                             </a>
                         </div>
-                    </motion.div>
 
-
-
-                    {/* Socials */}
-                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-                        <div className="flex space-x-6 px-8 py-3 bg-black/30 backdrop-blur-md border border-white/10 rounded-full shadow-lg hover:border-white/30 transition-colors duration-300">
-                            {[
-                                { name: "GitHub", url: "https://github.com/kaunteyaarjun" },
-                                { name: "LinkedIn", url: "https://www.linkedin.com/in/somyaprasadsethy/" },
-                                { name: "Instagram", url: "https://www.instagram.com/kaunteyaarjun/" },
-                                { name: "Twitter", url: "https://twitter.com/kaunteyaarjun" },
-                                { name: "Email", url: "mailto:teams@polestudios.in" }
-                            ].map(social => (
-                                <Magnetic key={social.name}>
-                                    <a
-                                        href={social.url}
-                                        target={social.url !== "#" ? "_blank" : "_self"}
-                                        rel="noopener noreferrer"
-                                        className="text-xs font-mono uppercase tracking-widest text-gray-400 hover:text-white transition-colors block py-1"
-                                    >
-                                        {social.name}
-                                    </a>
-                                </Magnetic>
+                        {/* Tech Stack Chips */}
+                        <div className="flex flex-wrap gap-2 pt-4">
+                            {["Next.js", "Go", "Rust", "TypeScript", "Node.js", "gRPC", "PostgreSQL", "Docker"].map((tech) => (
+                                <span
+                                    key={tech}
+                                    className="font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border border-white/15 bg-white/[0.02] text-gray-300"
+                                >
+                                    #{tech}
+                                </span>
                             ))}
                         </div>
                     </div>
-                </motion.div>
+                </div>
+
+                {/* Right Column: Interactive Systems Architecture Topology */}
+                <div className="lg:col-span-5 p-4 sm:p-6 lg:p-8 flex flex-col justify-center items-center bg-[#0d0d10] relative z-10 border-t-4 lg:border-t-0 border-white/10">
+                    {/* Ghost Background Typography */}
+                    <div className="absolute bottom-4 right-4 text-[12vw] lg:text-[8vw] font-sans font-black text-white/[0.02] pointer-events-none select-none leading-none z-0">
+                        SYSTEMS
+                    </div>
+
+                    <div className="w-full relative z-10 flex justify-center">
+                        <ArchitectureDiagram />
+                    </div>
+                </div>
             </div>
-                </section>
-            )}
-        </>
+        </section>
     );
 }

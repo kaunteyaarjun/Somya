@@ -2,8 +2,8 @@ import Arsenal from "@/components/sections/Arsenal";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-    title: "Skills & Tools | Somya Prasad",
-    description: "The technologies and tools I use to build digital experiences.",
+    title: "Skills & Tools | Somya Prasad Sethy",
+    description: "The backend, systems, and frontend technologies I use to build fast web products.",
 };
 
 export default function SkillsPage() {

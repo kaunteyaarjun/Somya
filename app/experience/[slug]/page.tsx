@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!experience) return { title: "Experience Not Found" };
 
     return {
-        title: `${experience.role} at ${experience.company} | Kaunteya Arjun`,
+        title: `${experience.role} at ${experience.company} | Somya Prasad Sethy`,
         description: experience.description,
         openGraph: {
-            title: `${experience.role} at ${experience.company} | Kaunteya Arjun`,
+            title: `${experience.role} at ${experience.company} | Somya Prasad Sethy`,
             description: experience.description,
         },
     };

@@ -1,50 +1,67 @@
-# Kaunteya Arjun (Somya Prasad Sethy)
+# Somya Prasad Sethy
 
-> CyberSecurity Researcher & Full Stack Engineer from Cuttack, Odisha, India.
+> Full-Stack Developer | Backend Engineer | Creative Developer
 
-Kaunteya Arjun, also known as Somya Prasad Sethy (online handle: Kaunteyaarjun), is a CyberSecurity Researcher and Full Stack Engineer focused on building resilient, scalable systems. He specializes in merging high-performance backend logic with intuitive frontend design.
+Self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. Founder of Pole Studios, a branding and web development studio. Open to remote roles worldwide.
+
+"I build backend systems, developer tooling and fast web products."
 
 ## Identity
 
 - **Full Name**: Somya Prasad Sethy
-- **Known As**: Kaunteya Arjun, Kaunteyaarjun, Kaunteya, Somya
-- **Title**: CyberSecurity Researcher & Full Stack Engineer
-- **Location**: Cuttack, Odisha, India
+- **Known As**: Somya Prasad, Somya, kaunteyaarjun
+- **Headline**: Full-Stack Developer | Backend Engineer | Creative Developer
+- **Location**: Cuttack, Odisha, India (Open to Remote Worldwide)
 - **Website**: https://somya.pages.dev
 - **GitHub**: https://github.com/kaunteyaarjun
 - **LinkedIn**: https://www.linkedin.com/in/somyaprasadsethy/
 - **Twitter/X**: https://twitter.com/kaunteyaarjun
-- **Instagram**: https://www.instagram.com/kaunteyaarjun/
 - **Email**: teams@polestudios.in
 
-## Expertise
+## Core Competencies
 
-- CyberSecurity Research & Penetration Testing
-- Full Stack Web Development (Next.js, React, TypeScript, Node.js)
-- High-Performance UI Design with GSAP & Framer Motion
-- Branding & Digital Product Strategy
-- Scalable Backend Architecture & API Design
-- Web Application Security
+- Full-Stack Web Development (Next.js App Router, React, TypeScript, Node.js)
+- Systems & Distributed Backend Engineering (Go, Rust, gRPC, Concurrency)
+- Cache Architecture & Memory Tiering (Radix Trees, VRAM/DRAM, KV-Cache)
+- DevSecOps & AST Code Inspection (Static Analysis, CI/CD Automation)
+- AI-Assisted Workflows & Production API Engineering
+- High-Performance UI Design (Tailwind CSS, Canvas Graphics, Framer Motion)
 
-## Professional Background
+## Professional Experience
 
-### Founder & Branding Consultant — Pole Studios (Oct 2025 – Present)
-Founded and operates a branding and web development studio delivering commercial websites and digital products. Developed a streamlined requirements-gathering process that reduced project delivery time by 15%.
+### Independent / Pole Studios — Full-Stack Developer (Jul 2023 – Present)
+- Design and build full-stack web apps (Next.js, React, Node.js) for startup founders and small businesses, turning business requirements into production-grade products.
+- Founded Pole Studios (Oct 2025) as a branding and web development studio, operating on zero external capital.
+- Built a streamlined requirements-gathering process that cut project delivery time by 15%.
+- Apply AI-assisted workflows across the development lifecycle, from scaffolding to code review.
 
-### Web Developer (Next.js) — Freelance (Jul 2023 – Oct 2025)
-Engineered and deployed immersive Next.js applications for various clients, consistently exceeding performance benchmarks. Recognised for cinematic UI design, GSAP animations, and smooth full-stack architecture.
+## Selected Projects
 
-### Video Editor — Freelance (Jan 2023 – Oct 2025)
-Collaborated with content creators on documentary and short-form video projects. Created dynamic motion graphics and tracked engagement metrics to optimise viewer retention.
+### 1. KV-Cache Fabric
+- **Description**: Disaggregated memory system for LLM agent swarms.
+- **Tech Stack**: Go, Rust, gRPC.
+- **Architecture**: VRAM-to-DRAM tiering, concurrent radix-tree prefix caching, race-free two-phase eviction.
+- **Results**:
+  - 53% lower time-to-first-token on partial cache hits
+  - 99.3% prefix-cache reuse in multi-agent benchmarks
+  - Zero deadlocks or OOM errors in a 16-concurrent-agent eviction stress test
 
-## Projects
+### 2. CodeSentry
+- **Description**: Zero-dependency DevSecOps & AI code inspection engine (self-hosted alternative to CodeRabbit).
+- **GitHub**: https://github.com/kaunteyaarjun/code_inspection_tool
+- **Tech Stack**: TypeScript, Python AST, Node.js (>=18), OpenRouter AI, GitHub Actions.
+- **Role**: Lead Developer (Team of 4).
+- **Features**: Multi-language AST taint analysis (JS, TS, Python), AutoGrad continuous risk grading with offline self-learning memory, DeployGuard pre-deployment gates, and ModelShield LLM/RAG defense. 97 tests passing across 30 suites. Zero Docker required.
 
-### Pole Studios (https://polestudios.in)
-Full-service branding and web development agency. High-performance, cinematic web experiences combining cutting-edge technology with premium design aesthetics. Built with Next.js, React, TypeScript, Tailwind CSS, Framer Motion, and GSAP.
+### 3. AI-Based Loan Disbursement System
+- **Description**: AI-driven loan eligibility scoring and disbursement workflow automation.
+- **Tech Stack**: Python, FastAPI, Next.js, PostgreSQL, Scikit-Learn.
+- **Features**: Real-time risk scoring, transparent credit decisioning, idempotent automated disbursement pipeline.
 
-### DMS Photography (https://dmsphotography.in)
-High-end photography portfolio with immersive gallery experience and cinematic presentation. Optimized delivery of hundreds of high-resolution images with custom masonry grid layouts. Built with Next.js, React, Tailwind CSS, and Framer Motion.
+### 4. Pole Studios (https://polestudios.in)
+- **Description**: Branding and web development studio delivering commercial websites and digital products.
+- **Founded**: October 2025. Operating on zero external capital.
 
 ## Technology Stack
 
-Next.js, React, TypeScript, Node.js, Tailwind CSS, GSAP, Framer Motion, Figma, VS Code, Vercel, Sanity CMS, Premiere Pro, After Effects, DaVinci Resolve
+Go, Rust, TypeScript, JavaScript, Python, Next.js, React, Node.js, gRPC, Protobuf, PostgreSQL, Redis, Tailwind CSS, Docker, Linux, Git, Framer Motion.

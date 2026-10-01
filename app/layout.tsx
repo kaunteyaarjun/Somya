@@ -30,24 +30,23 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kaunteya Arjun (Somya Prasad) — CyberSecurity Researcher & Full Stack Engineer",
-    template: "%s | Kaunteya Arjun",
+    default: "Somya Prasad Sethy — Full-Stack & Backend Developer",
+    template: "%s | Somya Prasad Sethy",
   },
-  description: "Kaunteya Arjun, also known as Somya Prasad Sethy (Kaunteyaarjun), is a CyberSecurity Researcher and Full Stack Engineer specializing in resilient, scalable systems, high-performance web applications, and cinematic UI design. Founder of Pole Studios.",
+  description: "Self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. Founder of Pole Studios.",
   keywords: [
-    "Kaunteya", "Kaunteya Arjun", "Kaunteyaarjun", "Somya", "Somya Prasad", "Somya Prasad Sethy",
-    "CyberSecurity Researcher", "Security Researcher", "Full Stack Engineer", "Full Stack Developer",
-    "Next.js Developer", "React Developer", "TypeScript Developer",
-    "Pole Studios", "Web Developer India", "UI/UX Designer",
-    "GSAP Developer", "Framer Motion", "Cinematic Web Design",
-    "Portfolio", "Vibe Coder", "Branding Consultant"
+    "Somya Prasad Sethy", "Somya Prasad", "Somya", "kaunteyaarjun",
+    "Full-Stack Developer", "Backend Engineer", "Creative Developer",
+    "Systems Engineer", "Go", "Rust", "Distributed Systems", "LLM Inference",
+    "KV-Cache Fabric", "CodeSentry",
+    "Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS",
+    "Pole Studios", "Web Developer India", "Developer Tooling", "Remote Developer"
   ],
   authors: [
-    { name: "Kaunteya Arjun", url: "https://somya.pages.dev" },
     { name: "Somya Prasad Sethy", url: "https://somya.pages.dev" },
   ],
-  creator: "Kaunteya Arjun (Somya Prasad Sethy)",
-  publisher: "Kaunteya Arjun",
+  creator: "Somya Prasad Sethy",
+  publisher: "Somya Prasad Sethy",
   metadataBase: new URL('https://somya.pages.dev'),
   alternates: {
     canonical: "https://somya.pages.dev",
@@ -56,10 +55,10 @@ export const metadata: Metadata = {
     google: "I-yU9BkXZkNlaEHWfb5p_AZ1JMlvKplLF2jZX4J3rT0",
   },
   openGraph: {
-    title: "Kaunteya Arjun — CyberSecurity Researcher & Full Stack Engineer",
-    description: "Kaunteya Arjun (Somya Prasad Sethy / Kaunteyaarjun) — CyberSecurity Researcher and Full Stack Engineer building resilient, scalable systems. Founder of Pole Studios.",
+    title: "Somya Prasad Sethy — Full-Stack & Backend Developer",
+    description: "Self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. Founder of Pole Studios.",
     url: "https://somya.pages.dev",
-    siteName: "Kaunteya Arjun — Portfolio",
+    siteName: "Somya Prasad Sethy — Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -67,16 +66,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Kaunteya Arjun (Somya Prasad) — CyberSecurity Researcher & Full Stack Engineer Portfolio",
+        alt: "Somya Prasad Sethy — Full-Stack & Backend Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaunteya Arjun — CyberSecurity Researcher & Full Stack Engineer",
-    description: "CyberSecurity Researcher | Full Stack Engineer | Founder of Pole Studios. Building resilient, scalable systems.",
+    title: "Somya Prasad Sethy — Full-Stack & Backend Developer",
+    description: "Full-Stack Developer & Backend Engineer. I build backend systems, developer tooling and fast web products. Founder of Pole Studios.",
     creator: "@kaunteyaarjun",
     site: "@kaunteyaarjun",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -102,27 +102,27 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': 'https://somya.pages.dev/#person',
-    name: 'Kaunteya Arjun',
-    alternateName: ['Somya Prasad Sethy', 'Somya Prasad', 'Kaunteyaarjun', 'Kaunteya', 'Somya'],
+    name: 'Somya Prasad Sethy',
+    alternateName: ['Somya Prasad', 'Somya', 'kaunteyaarjun'],
     url: 'https://somya.pages.dev',
     image: 'https://somya.pages.dev/og-image.png',
     sameAs: [
       'https://github.com/kaunteyaarjun',
       'https://www.linkedin.com/in/somyaprasadsethy/',
       'https://twitter.com/kaunteyaarjun',
-      'https://www.instagram.com/kaunteyaarjun/',
     ],
-    jobTitle: 'CyberSecurity Researcher & Full Stack Engineer',
+    jobTitle: 'Full-Stack Developer & Backend Engineer',
     worksFor: {
       '@type': 'Organization',
       name: 'Pole Studios',
       url: 'https://polestudios.in',
     },
-    description: 'Kaunteya Arjun (Somya Prasad Sethy) is a CyberSecurity Researcher and Full Stack Engineer focused on building resilient, scalable systems. He specializes in merging high-performance backend logic with intuitive frontend design. Founder of Pole Studios.',
+    description: 'Self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. Founder of Pole Studios, a branding and web development studio. Open to remote roles worldwide.',
     knowsAbout: [
-      'CyberSecurity', 'Penetration Testing', 'Web Application Security',
-      'Next.js', 'React', 'TypeScript', 'Node.js', 'GSAP', 'Tailwind CSS',
-      'Full Stack Development', 'UI/UX Design', 'Framer Motion', 'Web Performance Optimization'
+      'Full-Stack Development', 'Backend Engineering', 'Distributed Systems',
+      'Go', 'Rust', 'gRPC', 'LLM Inference Caching',
+      'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL',
+      'DevSecOps', 'Static Code Analysis', 'Workflow Automation'
     ],
     nationality: {
       '@type': 'Country',
@@ -141,47 +141,31 @@ export default function RootLayout({
     '@type': 'WebSite',
     '@id': 'https://somya.pages.dev/#website',
     url: 'https://somya.pages.dev',
-    name: 'Kaunteya Arjun — Portfolio',
-    description: 'Official portfolio of Kaunteya Arjun (Somya Prasad Sethy / Kaunteyaarjun) — CyberSecurity Researcher and Full Stack Engineer.',
+    name: 'Somya Prasad Sethy — Portfolio',
+    description: 'Official portfolio of Somya Prasad Sethy (kaunteyaarjun) — Full-Stack Developer & Backend Engineer.',
     publisher: { '@id': 'https://somya.pages.dev/#person' },
     inLanguage: 'en-US',
   };
 
-  // FAQ schema for AEO — answers common questions AI engines surface
+  // FAQ schema for AEO
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Who is Kaunteya Arjun?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Kaunteya Arjun, also known as Somya Prasad Sethy (username: Kaunteyaarjun), is a CyberSecurity Researcher and Full Stack Engineer from Cuttack, Odisha, India. He specializes in building resilient, scalable systems and is the founder of Pole Studios, a branding and web development studio.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Who is Kaunteyaarjun?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Kaunteyaarjun is the online handle of Kaunteya Arjun (Somya Prasad Sethy), a CyberSecurity Researcher and Full Stack Engineer. He is active on GitHub, Twitter, Instagram, and LinkedIn under this username.',
-        },
-      },
-      {
-        '@type': 'Question',
         name: 'Who is Somya Prasad Sethy?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Somya Prasad Sethy, known online as Kaunteya Arjun or Kaunteyaarjun, is a CyberSecurity Researcher and Full Stack Engineer from India. He founded Pole Studios and specializes in Next.js, React, TypeScript, and high-performance web applications with cinematic UI design.',
+          text: 'Somya Prasad Sethy (GitHub: kaunteyaarjun) is a self-taught, AI-assisted full-stack and backend developer with 3+ years of experience building production-grade web applications and developer tooling. He is the founder of Pole Studios.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What does Kaunteya Arjun do?',
+        name: 'What does Somya Prasad Sethy build?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Kaunteya Arjun is a CyberSecurity Researcher and Full Stack Engineer focused on building resilient, scalable systems. He merges high-performance backend logic with intuitive frontend design using Next.js, React, TypeScript, and Node.js. He is also the founder of Pole Studios.',
+          text: 'Somya Prasad Sethy builds backend systems, developer tooling, and fast web products. Key projects include KV-Cache Fabric (a disaggregated memory system for LLM agent swarms in Go/Rust/gRPC), CodeSentry (an open-source DevSecOps code inspector), and the AI-Based Loan Disbursement System.',
         },
       },
       {
@@ -189,7 +173,15 @@ export default function RootLayout({
         name: 'What is Pole Studios?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Pole Studios is a branding and web development studio founded by Kaunteya Arjun (Somya Prasad Sethy). It delivers commercial websites and digital products for clients, focusing on high-performance, cinematic web experiences.',
+          text: 'Pole Studios is a branding and web development studio founded in October 2025 by Somya Prasad Sethy. Operating on zero external capital, Pole Studios designs and builds full-stack web applications for startup founders and small businesses.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is Somya Prasad Sethy’s GitHub handle?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Somya Prasad Sethy can be found on GitHub at https://github.com/kaunteyaarjun.',
         },
       },
     ],
@@ -215,7 +207,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        {/* FAQ Schema for AEO — helps AI engines answer questions about you */}
+        {/* FAQ Schema for AEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

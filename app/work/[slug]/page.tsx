@@ -5,6 +5,8 @@ import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/sections/Footer";
 import ReactMarkdown from "react-markdown";
+import KVCacheLandingPage from "@/components/kv-cache/KVCacheLandingPage";
+import CodeSentryLandingPage from "@/components/codesentry/CodeSentryLandingPage";
 
 export function generateStaticParams() {
     return PROJECTS.map((project) => ({
@@ -16,13 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const project = PROJECTS.find((p) => p.slug === slug);
 
-    if (!project) return { title: "Project Not Found" };
+    if (!project) return { title: "Project Not Found | Somya Prasad Sethy" };
 
     return {
-        title: `${project.title} | Kaunteya Arjun`,
+        title: `${project.title} | Somya Prasad Sethy`,
         description: project.description,
         openGraph: {
-            title: `${project.title} | Kaunteya Arjun`,
+            title: `${project.title} | Somya Prasad Sethy`,
             description: project.description,
             images: [{ url: project.image }],
         },
@@ -35,6 +37,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
     if (!project) {
         notFound();
+    }
+
+    if (slug === "kv-cache-fabric") {
+        return <KVCacheLandingPage />;
+    }
+
+    if (slug === "codesentry") {
+        return <CodeSentryLandingPage />;
     }
 
     return (
@@ -61,8 +71,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </section>
 
             {/* Massive Box-less Image */}
-            <section className="w-full max-w-7xl mx-auto px-6 mb-24">
-                <div className="relative w-full aspect-video bg-white/5">
+            <section className="w-full max-w-7xl mx-auto px-6 mb-20">
+                <div className="relative w-full aspect-video bg-white/5 border border-white/10">
                     <Image
                         src={project.image}
                         alt={project.title}
@@ -72,6 +82,43 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     />
                 </div>
             </section>
+
+            {/* Verified Metrics Bar if available */}
+            {project.metrics && project.metrics.length > 0 && (
+                <section className="w-full max-w-5xl mx-auto px-6 mb-20">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 bg-white/[0.02] border border-white/10">
+                        {project.metrics.map((m) => (
+                            <div key={m.label} className="space-y-2">
+                                <span className="text-xs font-mono uppercase tracking-[0.2em] text-gray-500">{m.label}</span>
+                                <p className="text-lg md:text-xl font-mono text-white font-bold">{m.value}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {/* Video Explainer Section inside the Case Study */}
+            {project.video && (
+                <section className="w-full max-w-5xl mx-auto px-6 mb-20">
+                    <div className="border border-white/10 p-4 md:p-6 bg-white/[0.02] space-y-4">
+                        <div className="flex items-center justify-between">
+                            <span className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-400 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                                Video Explainer & Demonstration
+                            </span>
+                            <span className="text-xs font-mono text-gray-500 uppercase">Architecture Deep Dive</span>
+                        </div>
+                        <div className="relative w-full aspect-video overflow-hidden bg-black border border-white/10">
+                            <video
+                                src={project.video}
+                                controls
+                                playsInline
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Content Section */}
             <section className="py-12 px-6 md:px-20 max-w-5xl mx-auto mb-24">
@@ -104,7 +151,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         </div>
                     </div>
 
-                    {/* Right Column - Meta (Box-less) */}
+                    {/* Right Column - Meta */}
                     <div className="space-y-16">
                         <div className="sticky top-32">
                             <h2 className="text-xs font-sans text-gray-500 uppercase tracking-widest mb-6 border-b border-white/10 pb-4">Tech Stack</h2>
@@ -122,7 +169,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                                 rel="noopener noreferrer"
                                 className="group inline-flex items-center justify-between w-full mt-16 py-4 border-b border-white/20 hover:border-white text-white font-sans text-lg transition-colors"
                             >
-                                <span>Visit Live Site</span>
+                                <span>Visit Repository / Platform</span>
                                 <span className="transform group-hover:translate-x-2 transition-transform">&rarr;</span>
                             </a>
                         </div>

@@ -20,32 +20,29 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 40);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Determine active item based on current route. 
-    // If we're on /work/pole-studios, the "Work" tab should still be active.
     const isActive = (href: string) => {
         if (href === "/" && pathname !== "/") return false;
         return pathname.startsWith(href);
     };
 
     return (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[350px] sm:max-w-md">
+        <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md">
             <motion.nav
-                initial={{ y: -100, opacity: 0 }}
+                initial={{ y: -60, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 className={cn(
-                    "flex items-center justify-between px-6 py-3 rounded-full",
-                    "bg-black/70 backdrop-blur-md",
-                    "border border-white/10",
-                    "shadow-lg shadow-black/20",
+                    "flex items-center justify-between px-6 py-2.5 border-2 border-white/20",
+                    "bg-[#0a0a0c]/90 backdrop-blur-md",
+                    "shadow-[4px_4px_0_rgba(255,255,255,0.15)]",
                     "transition-all duration-300",
-                    scrolled ? "bg-black/90 shadow-2xl shadow-black/50" : ""
+                    scrolled ? "bg-[#0a0a0c]/95 border-white/30 shadow-[6px_6px_0_rgba(255,255,255,0.2)]" : ""
                 )}
             >
                 <ul className="flex items-center justify-between w-full">
@@ -56,19 +53,19 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     className={cn(
-                                        "relative text-xs sm:text-sm font-sans tracking-widest uppercase transition-colors duration-300",
+                                        "relative text-xs font-mono font-bold tracking-[0.2em] uppercase transition-colors duration-200 py-1",
                                         active
-                                            ? "text-white font-bold"
+                                            ? "text-white"
                                             : "text-gray-400 hover:text-white"
                                     )}
                                 >
+                                    {item.name}
                                     {active && (
-                                        <motion.span
-                                            layoutId="active-dot"
-                                            className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"
+                                        <motion.div
+                                            layoutId="active-bar"
+                                            className="absolute -bottom-1 left-0 right-0 h-[2px] bg-white"
                                         />
                                     )}
-                                    {item.name}
                                 </Link>
                             </li>
                         );

@@ -2,69 +2,105 @@
 
 import { motion } from "framer-motion";
 import {
-    SiFigma,
-    SiAdobeaftereffects,
     SiNextdotjs,
     SiReact,
     SiTypescript,
-    SiTailwindcss,
-    SiFramer,
-    SiGreensock,
     SiNodedotjs,
-    SiHtml5,
-    SiCss3,
+    SiGo,
+    SiRust,
+    SiDocker,
+    SiPostgresql,
+    SiTailwindcss,
     SiPython,
-    SiAdobecreativecloud
+    SiFramer
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 const TECHNOLOGIES = [
-    { name: "Next.js", Icon: SiNextdotjs },
-    { name: "React", Icon: SiReact },
-    { name: "TypeScript", Icon: SiTypescript },
-    { name: "GSAP", Icon: SiGreensock },
-    { name: "Tailwind CSS", Icon: SiTailwindcss },
-    { name: "Node.js", Icon: SiNodedotjs },
-    { name: "HTML5", Icon: SiHtml5 },
-    { name: "CSS3", Icon: SiCss3 },
-    { name: "Figma", Icon: SiFigma },
-    { name: "VS Code", Icon: VscVscode },
-    { name: "Framer Motion", Icon: SiFramer },
-    { name: "After Effects", Icon: SiAdobeaftereffects },
-    { name: "Adobe Creative Cloud", Icon: SiAdobecreativecloud },
-    { name: "Python", Icon: SiPython },
+    { name: "Go", Icon: SiGo, spec: "Concurrency & Low-Latency" },
+    { name: "Rust", Icon: SiRust, spec: "Zero-Cost Abstractions" },
+    { name: "Next.js", Icon: SiNextdotjs, spec: "React Server Runtimes" },
+    { name: "TypeScript", Icon: SiTypescript, spec: "Type-Level Soundness" },
+    { name: "PostgreSQL", Icon: SiPostgresql, spec: "ACID Relational Storage" },
+    { name: "Docker", Icon: SiDocker, spec: "Container Virtualization" },
+    { name: "React", Icon: SiReact, spec: "Concurrent UI Pipelines" },
+    { name: "Node.js", Icon: SiNodedotjs, spec: "Event-Loop Asynchrony" },
+    { name: "Python", Icon: SiPython, spec: "ML & Data Analytics" },
+    { name: "Tailwind CSS", Icon: SiTailwindcss, spec: "Utility Styling Layer" },
+    { name: "Framer Motion", Icon: SiFramer, spec: "Spring Physics Engine" },
+    { name: "VS Code", Icon: VscVscode, spec: "Systems IDE Environment" },
 ];
 
 export default function InfiniteMarquee() {
     return (
-        <section className="py-24 bg-background overflow-hidden relative border-y border-white/5">
-            {/* Gradient Masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-background to-transparent z-10" />
+        <section className="bg-[#0b0b0e] overflow-hidden relative border-y-2 border-white/10 select-none">
+            {/* Top Coordinate Ticker Rail */}
+            <div className="border-b border-white/10 px-6 py-2 flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest bg-[#070709]">
+                <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400" />
+                    <span className="text-gray-300 font-bold">SYSTEM_STACK_STREAM</span>
+                    <span className="text-white/20">|</span>
+                    <span>PIPELINE: ACTIVE</span>
+                </div>
+                <div className="hidden md:flex items-center gap-6">
+                    <span>BANDWIDTH: 10 Gbps</span>
+                    <span>•</span>
+                    <span>THROUGHPUT: ZERO-COPY</span>
+                    <span>•</span>
+                    <span>TOPOLOGY: DISTRIBUTED</span>
+                </div>
+            </div>
 
-            <div className="flex w-max">
+            {/* Gradient Masks */}
+            <div className="absolute left-0 top-8 bottom-0 w-16 md:w-36 bg-gradient-to-r from-[#0b0b0e] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-8 bottom-0 w-16 md:w-36 bg-gradient-to-l from-[#0b0b0e] to-transparent z-10 pointer-events-none" />
+
+            <div className="py-10 flex w-max">
                 <motion.div
                     animate={{ x: "-50%" }}
                     transition={{
                         repeat: Infinity,
                         ease: "linear",
-                        duration: 40,
+                        duration: 35,
                     }}
-                    className="flex space-x-12 md:space-x-24 px-6 md:px-12 items-center"
+                    className="flex space-x-6 md:space-x-8 px-4 items-center"
                 >
-                    {/* Duplicate list 4 times to ensure smooth infinite loop on large screens */}
                     {[...TECHNOLOGIES, ...TECHNOLOGIES, ...TECHNOLOGIES, ...TECHNOLOGIES].map((tech, index) => (
-                        <div key={index} className="group relative flex items-center justify-center p-4 min-w-[80px] h-[80px] grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100 hover:scale-110 cursor-help">
-                            {/* Glow Effect on Hover */}
-                            <div className="absolute inset-0 bg-white/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
+                        <div
+                            key={index}
+                            className="group relative flex items-center gap-3.5 px-5 py-3 border-2 border-white/10 bg-[#121216] hover:border-emerald-400/80 hover:bg-[#181820] transition-all duration-300"
+                        >
                             <tech.Icon
-                                className="w-12 h-12 md:w-16 md:h-16 text-white drop-shadow-lg transition-all duration-300"
+                                className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 group-hover:scale-110 transition-all duration-200"
                                 title={tech.name}
                             />
+                            <div className="flex flex-col">
+                                <span className="font-mono text-xs font-bold uppercase tracking-wider text-white group-hover:text-emerald-300 transition-colors">
+                                    {tech.name}
+                                </span>
+                                <span className="font-mono text-[9px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    {tech.spec}
+                                </span>
+                            </div>
                         </div>
                     ))}
                 </motion.div>
+            </div>
+
+            {/* Bottom Mathematical Invariant Rail */}
+            <div className="border-t border-white/10 px-6 py-2 flex items-center justify-between font-mono text-[9px] text-gray-500 uppercase tracking-widest bg-[#070709]">
+                <div className="flex items-center gap-4">
+                    <span>O(1) ACCESS</span>
+                    <span>•</span>
+                    <span>53% LOWER TTFT</span>
+                    <span>•</span>
+                    <span>99.3% CACHE REUSE</span>
+                    <span>•</span>
+                    <span>LOCKLESS ATOMICS</span>
+                </div>
+                <div className="hidden sm:inline text-emerald-400/70">
+                    ∀ s ∈ SYSTEMS : REPRODUCIBLE_DEPLOYMENTS = TRUE
+                </div>
             </div>
         </section>
     );

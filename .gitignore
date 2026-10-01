@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scratch & reference archives
+temp_anime/
+temp_stitch/
+*.zip
+/kv_cache_fabric_explainer.mp4
+/Somya_Prasad_Sethy_Resume.pdf

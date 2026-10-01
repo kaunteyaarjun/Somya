@@ -1,26 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Footer() {
     return (
-        <footer id="contact" className="py-12 px-6 border-t border-white/5 bg-black text-center relative overflow-hidden">
+        <footer id="contact" className="py-16 px-6 border-t border-white/5 bg-black text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-white/5 blur-3xl opacity-10 pointer-events-none" />
 
-            <div className="relative z-10 space-y-8">
-                <h2 className="text-2xl font-sans font-bold tracking-widest text-white opacity-90">
-                    SOMYA PRASAD SETHY
-                </h2>
-
-                <div className="flex justify-center space-x-6">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm font-sans text-gray-500">
-                        <div>© {new Date().getFullYear()} Somya Prasad Sethy. All rights reserved.</div>
-                        <div className="hidden md:block w-1 h-1 bg-gray-700 rounded-full" />
-                        <a href="mailto:teams@polestudios.in" className="hover:text-white transition-colors">teams@polestudios.in</a>
-                    </div>
+            <div className="relative z-10 space-y-6 max-w-4xl mx-auto">
+                <div className="space-y-2">
+                    <h2 className="text-xl sm:text-2xl font-mono font-bold tracking-widest text-white uppercase">
+                        SOMYA PRASAD SETHY
+                    </h2>
+                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-gray-500">
+                        Full-Stack Developer | Backend Engineer | Creative Developer
+                    </p>
                 </div>
 
+                <div className="flex flex-wrap justify-center gap-6 text-xs font-mono uppercase tracking-[0.2em] text-gray-400">
+                    <a
+                        href="https://github.com/kaunteyaarjun"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-white transition-colors"
+                    >
+                        GitHub
+                    </a>
+                    <span className="opacity-20">•</span>
+                    <a
+                        href="https://linkedin.com/in/somyaprasadsethy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-white transition-colors"
+                    >
+                        LinkedIn
+                    </a>
+                    <span className="opacity-20">•</span>
+                    <a
+                        href="https://twitter.com/kaunteyaarjun"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-white transition-colors"
+                    >
+                        Twitter
+                    </a>
+                    <span className="opacity-20">•</span>
+                    <a
+                        href="mailto:teams@polestudios.in"
+                        className="hover:text-white transition-colors"
+                    >
+                        teams@polestudios.in
+                    </a>
+                </div>
 
+                <div className="pt-4 text-xs font-mono text-gray-600">
+                    © {new Date().getFullYear()} Somya Prasad Sethy. All rights reserved.
+                </div>
             </div>
         </footer>
     );
