@@ -38,6 +38,13 @@ input[type="text"], input[type="email"], textarea {
   cursor: text !important;
 }
 
+/* Touch & Mobile screens: No custom cursor artifacts, clean native touch */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 ::selection {
   background-color: var(--gold);
   color: white;
