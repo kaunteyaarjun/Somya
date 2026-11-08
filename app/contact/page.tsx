@@ -10,7 +10,7 @@ export default function ContactPage() {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText("teams@polestudios.in");
+        navigator.clipboard.writeText("somya5400840@gmail.com");
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -98,7 +98,7 @@ export default function ContactPage() {
                                         )}
                                     </button>
                                     <a
-                                        href="mailto:teams@polestudios.in"
+                                        href="mailto:somya5400840@gmail.com"
                                         className="px-4 py-2.5 bg-white hover:bg-emerald-400 text-black font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all"
                                     >
                                         <span>LAUNCH</span>

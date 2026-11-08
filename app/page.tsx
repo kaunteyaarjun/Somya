@@ -1,21 +1,21 @@
 import Loader from "@/components/hero/Loader";
-import Hero from "@/components/hero/Hero";
-import HomeAbout from "@/components/sections/HomeAbout";
-import InfiniteMarquee from "@/components/sections/InfiniteMarquee";
-import HomeArsenal from "@/components/sections/HomeArsenal";
-import HomeProjectVault from "@/components/sections/HomeProjectVault";
-import Footer from "@/components/sections/Footer";
+import CreativeNavbar from "@/components/creative/CreativeNavbar";
+import CreativeHero from "@/components/creative/CreativeHero";
+import CreativeWorks from "@/components/creative/CreativeWorks";
+import CreativeExperience from "@/components/creative/CreativeExperience";
+import CreativeTools from "@/components/creative/CreativeTools";
+import CreativeContact from "@/components/creative/CreativeContact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-[#0c0c0e] text-white selection:bg-neutral-300 selection:text-neutral-900">
       <Loader />
-      <Hero />
-      <HomeAbout />
-      <InfiniteMarquee />
-      <HomeArsenal />
-      <HomeProjectVault />
-      <Footer />
+      <CreativeNavbar />
+      <CreativeHero />
+      <CreativeWorks />
+      <CreativeExperience />
+      <CreativeTools />
+      <CreativeContact />
     </main>
   );
 }

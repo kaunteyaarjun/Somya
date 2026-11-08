@@ -10,8 +10,8 @@ export default function Footer() {
                     <h2 className="text-xl sm:text-2xl font-mono font-bold tracking-widest text-white uppercase">
                         SOMYA PRASAD SETHY
                     </h2>
-                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-gray-500">
-                        Full-Stack Developer | Backend Engineer | Creative Developer
+                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-gray-400">
+                        Creative Developer · AI-Assisted Backend Development · Python & Systems
                     </p>
                 </div>
 
@@ -44,10 +44,10 @@ export default function Footer() {
                     </a>
                     <span className="opacity-20">•</span>
                     <a
-                        href="mailto:teams@polestudios.in"
+                        href="mailto:somya5400840@gmail.com"
                         className="hover:text-white transition-colors"
                     >
-                        teams@polestudios.in
+                        somya5400840@gmail.com
                     </a>
                 </div>
 

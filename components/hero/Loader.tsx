@@ -147,7 +147,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         duration: 950,
         innerHTML: scrambleText({
           override: false,
-          text: "FULL-STACK & BACKEND DEVELOPER",
+          text: "CREATIVE DEVELOPER · AI-ASSISTED BACKEND",
           from: "right",
           duration: 800,
           settleDuration: 400,
@@ -381,22 +381,22 @@ export default function Loader({ onComplete }: LoaderProps) {
         {/* Slide 2: Features Diamond Grid */}
         <div className="slide slide-2 features opacity-0 absolute inset-0 flex flex-col justify-center items-center">
           <div className="row flex justify-center flex-nowrap">
-            <p data-color="3" className="text-[#ffd000] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">DISTRIBUTED SYSTEMS</p>
-            <p data-color="8" className="text-[#818cf8] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">BACKEND ARCHITECTURE</p>
+            <p data-color="3" className="text-[#ffd000] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">PYTHON & SYSTEMS</p>
+            <p data-color="8" className="text-[#818cf8] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">AI-ASSISTED BACKEND</p>
           </div>
           <div className="row flex justify-center flex-nowrap">
             <p data-color="14" className="text-[#4ade80] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">KV-CACHE FABRIC</p>
             <p data-color="0" className="text-[#ff5a1f] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">53% LOWER TTFT</p>
-            <p data-color="6" className="text-[#38bdf8] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">DEVSECOPS</p>
+            <p data-color="6" className="text-[#38bdf8] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">LINUX & NETWORKING</p>
           </div>
           <div className="row flex justify-center flex-nowrap">
             <p data-color="3" className="text-[#ffd000] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">POLE STUDIOS</p>
             <p data-color="16" className="text-[#f8fafc] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">CODESENTRY</p>
-            <p data-color="4" className="text-[#a3e635] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">99.3% CACHE REUSE</p>
-            <p data-color="1" className="text-[#ff3b30] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">FAST WEB PRODUCTS</p>
+            <p data-color="4" className="text-[#a3e635] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">MODEL CONTEXT PROTOCOL</p>
+            <p data-color="1" className="text-[#ff3b30] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">AGENTIC SYSTEMS</p>
           </div>
           <div className="row flex justify-center flex-nowrap">
-            <p data-color="11" className="text-[#f472b6] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">DEVELOPER TOOLING</p>
+            <p data-color="11" className="text-[#f472b6] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">RAG ARCHITECTURES</p>
             <p data-color="5" className="text-[#22d3ee] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">HIGH PERFORMANCE</p>
             <p data-color="10" className="text-[#c084fc] shrink-0 leading-none mx-[1ch] my-[0.6ch] text-xs sm:text-base md:text-lg font-mono font-bold whitespace-nowrap">AI LOAN DISBURSEMENT</p>
           </div>

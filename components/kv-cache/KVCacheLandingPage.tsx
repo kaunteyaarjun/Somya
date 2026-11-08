@@ -123,12 +123,12 @@ export default function KVCacheLandingPage() {
 
               <div className="flex flex-wrap items-center gap-3 pt-2 font-mono text-xs">
                 <span className="text-white/80">
-                  Engineered by <strong className="text-white font-medium">Somya Prasad Sethy</strong>
+                  Researched & Designed by <strong className="text-white font-medium">Somya Prasad Sethy</strong>
                 </span>
                 <span className="text-white/40">·</span>
-                <span className="text-white/80">v0.4.2 Zero-OOM Engine</span>
+                <span className="text-emerald-400 font-semibold">AI-Assisted Systems Implementation</span>
                 <span className="text-white/40">·</span>
-                <span className="text-emerald-400 font-semibold">53% Lower TTFT</span>
+                <span className="text-white/80">53% Lower TTFT</span>
               </div>
 
               {/* Glassy Pill CTAs & Command Box */}

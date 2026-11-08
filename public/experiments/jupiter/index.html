@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Dreaming of Jupiter — Three.js Systems Experiment | Somya Prasad Sethy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      #back-btn {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        font-weight: bold;
+        color: #ffffff;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 100px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.2s;
+      }
+      #back-btn:hover {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+      }
+      #overlay-tag {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 9999;
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.6);
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        padding: 6px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 100px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+    
+  <body>
+    <a href="/" id="back-btn">← Back to Portfolio</a>
+    <div id="overlay-tag">Three.js Orbit // Somya Prasad Sethy</div>
+    <div id="canvas_container"></div>
+    <button id="fullscr">Go Fullscreen</button>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js'></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

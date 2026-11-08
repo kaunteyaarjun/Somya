@@ -2,18 +2,19 @@
 
 import { motion } from "framer-motion";
 import {
-    SiReact,
-    SiNextdotjs,
-    SiTypescript,
-    SiTailwindcss,
-    SiNodedotjs,
-    SiGo,
-    SiRust,
+    SiPython,
+    SiLinux,
     SiDocker,
-    SiPostgresql,
-    SiPython
+    SiFastapi,
 } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
+import { 
+    VscTerminal, 
+    VscServerProcess, 
+    VscHubot, 
+    VscCircuitBoard, 
+    VscDatabase, 
+    VscSearch 
+} from "react-icons/vsc";
 
 interface SkillItemProps {
     name: string;
@@ -45,7 +46,7 @@ export default function Arsenal() {
         <section id="arsenal" className="py-24 md:py-32 px-6 md:px-16 bg-[#0a0a0c] relative z-10 border-t-2 border-white/10">
             {/* Ghost Background Typography */}
             <div className="absolute top-8 left-8 text-[12vw] font-sans font-black text-white/[0.02] pointer-events-none select-none leading-none z-0">
-                TOOLKIT
+                SYSTEMS
             </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
@@ -58,78 +59,79 @@ export default function Arsenal() {
                 >
                     {/* Left Column: Headline */}
                     <div className="md:col-span-5 md:sticky md:top-32">
-                        <div className="text-xs font-mono uppercase tracking-[0.25em] text-gray-500 mb-3">
-                            // 03 — TECH ARSENAL
+                        <div className="text-xs font-mono uppercase tracking-[0.25em] text-emerald-400 mb-3 flex items-center gap-2">
+                            <span className="w-2 h-2 bg-emerald-400 rounded-full" />
+                            <span>// 03 — TECH ARSENAL</span>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-sans font-black text-white leading-tight mb-6 uppercase">
-                            Technologies <br/>
-                            <span className="stroke">&amp; Systems.</span>
+                            Systems <br/>
+                            <span className="stroke">&amp; Architectures.</span>
                         </h2>
-                        <p className="text-gray-400 font-mono uppercase tracking-[0.2em] text-xs leading-relaxed max-w-xs opacity-80">
-                            The languages, runtimes, and distributed primitives used to engineer fast software.
+                        <p className="text-gray-400 font-mono uppercase tracking-[0.15em] text-xs leading-relaxed max-w-xs opacity-80">
+                            Python, Linux networking, Model Context Protocol (MCP), and AI-assisted backend architectures.
                         </p>
                     </div>
 
                     {/* Right Column: Skills Grid */}
                     <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 md:-mt-2">
                         <SkillItem
-                            name="Go"
-                            description="High-concurrency systems, low-latency microservices, concurrent radix-tree caching, and networking daemon architectures."
-                            icon={SiGo}
+                            name="Python"
+                            description="Core programming language. Machine learning models, AST analysis, agentic workflows, API services, and system automation."
+                            icon={SiPython}
                             delay={0.05}
                         />
                         <SkillItem
-                            name="Rust"
-                            description="Memory-safe systems programming, high-throughput FFI extensions, zero-cost abstractions, and CPU-bound workloads."
-                            icon={SiRust}
+                            name="Linux Systems"
+                            description="Process management, memory paging, POSIX primitives, systemctl services, bash scripting, and container environments."
+                            icon={SiLinux}
                             delay={0.1}
                         />
                         <SkillItem
-                            name="Next.js"
-                            description="Full-stack App Router architecture, server components, streaming edge rendering, and SEO/AEO optimization."
-                            icon={SiNextdotjs}
+                            name="Networking & Sockets"
+                            description="TCP/IP sockets, gRPC protobuf streams, HTTP/2 multiplexing, reverse proxies, and low-latency client/server topologies."
+                            icon={VscServerProcess}
                             delay={0.15}
                         />
                         <SkillItem
-                            name="TypeScript"
-                            description="Strict type-safety across distributed services, shared schema contracts, and robust frontend component hierarchies."
-                            icon={SiTypescript}
+                            name="AI-Assisted Backend"
+                            description="Orchestrating AI code-generation agents to rapidly scaffold, test, and deploy resilient production backend services."
+                            icon={VscTerminal}
                             delay={0.2}
                         />
                         <SkillItem
-                            name="Node.js"
-                            description="Event-driven backend services, RESTful & gRPC APIs, CLI developer tooling, and AST parsing engines."
-                            icon={SiNodedotjs}
+                            name="Model Context Protocol (MCP)"
+                            description="Authoring and integrating MCP servers and client tool runners to securely bridge LLMs with host system APIs and databases."
+                            icon={VscCircuitBoard}
                             delay={0.25}
                         />
                         <SkillItem
-                            name="PostgreSQL"
-                            description="Relational database modeling, transactional ACID integrity, indexing strategies, and automated disbursement state machines."
-                            icon={SiPostgresql}
+                            name="RAG Pipelines"
+                            description="Hybrid dense + sparse semantic search, reciprocal rank fusion (RRF), cross-encoder reranking, and context chunking."
+                            icon={VscSearch}
                             delay={0.3}
                         />
                         <SkillItem
-                            name="Docker"
-                            description="Self-hosted containerization, reproducible deployment topologies, and isolated CI/CD pipelines."
-                            icon={SiDocker}
+                            name="Advanced Agentic Systems"
+                            description="Multi-agent swarm coordination, autonomous planner-critic loops, state checkpointing, and dynamic tool calling."
+                            icon={VscHubot}
                             delay={0.35}
                         />
                         <SkillItem
-                            name="Python"
-                            description="Machine learning credit scoring pipelines, AST code inspection scripts, and rapid data prototyping."
-                            icon={SiPython}
+                            name="Vector Databases"
+                            description="Embeddings storage, similarity indexing (HNSW), semantic caching, and real-time knowledge retrieval."
+                            icon={VscDatabase}
                             delay={0.4}
                         />
                         <SkillItem
-                            name="React"
-                            description="Dynamic component architectures, reactive state management, and high-performance interactive interfaces."
-                            icon={SiReact}
+                            name="FastAPI"
+                            description="High-performance asynchronous REST microservices, OpenAPI schemas, and transactional endpoints."
+                            icon={SiFastapi}
                             delay={0.45}
                         />
                         <SkillItem
-                            name="Tailwind CSS"
-                            description="Design system tokens, custom typography scales, and high-contrast brutalist UI layouts."
-                            icon={SiTailwindcss}
+                            name="Docker"
+                            description="Self-hosted containerization, reproducible execution sandboxes, and isolated microservice environments."
+                            icon={SiDocker}
                             delay={0.5}
                         />
                     </div>

@@ -53,8 +53,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Flat Editorial Hero */}
             <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto">
-                <Link href="/#work" className="inline-flex items-center text-sm font-sans text-gray-500 hover:text-white transition-colors mb-12 group uppercase tracking-widest">
-                    <span className="mr-4 transform group-hover:-translate-x-2 transition-transform">&larr;</span> Back to Vault
+                <Link href="/#works" className="inline-flex items-center text-sm font-sans text-gray-500 hover:text-white transition-colors mb-12 group uppercase tracking-widest">
+                    <span className="mr-4 transform group-hover:-translate-x-2 transition-transform">&larr;</span> Back to Works
                 </Link>
                 
                 <h1 className="text-5xl md:text-8xl font-sans font-bold mb-8 tracking-tighter">

@@ -83,7 +83,7 @@ export default function About() {
             <div className="max-w-7xl mx-auto mb-16 border-b-2 border-white/10 pb-4 flex flex-wrap items-center justify-between font-mono text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest select-none">
                 <div className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-emerald-400 animate-pulse" />
-                    <span className="text-white font-bold">SYSTEMS ARCHITECT & FULL-STACK ENGINEER</span>
+                    <span className="text-white font-bold">CREATIVE DEVELOPER · AI-ASSISTED BACKEND</span>
                     <span className="text-white/20">|</span>
                     <span className="text-emerald-400">SPEC_ID: 0x7F4A</span>
                 </div>
@@ -107,26 +107,26 @@ export default function About() {
                         </div>
 
                         <h2 className="text-4xl sm:text-6xl font-sans font-black tracking-tight leading-[1.05] uppercase">
-                            I build backend systems, <br />
-                            <span className="stroke">developer tooling</span> <br />
-                            and fast web products.
+                            I create AI-assisted <br />
+                            <span className="stroke">backend development</span> <br />
+                            & agentic runtimes.
                         </h2>
 
                         <div className="font-sans text-base sm:text-lg text-gray-300 font-normal leading-relaxed space-y-4 pt-2">
                             <p>
-                                Self-taught, AI-assisted <strong className="text-white font-semibold">full-stack and backend developer</strong> with 3+ years of experience building production-grade web applications and developer tooling.
+                                Creative developer specializing in <strong className="text-white font-semibold">AI-assisted backend development</strong> and systems architectures. I bridge deep systems research with prompt-driven engineering velocity to build robust, scalable services.
                             </p>
                             <p>
-                                Founder of <strong className="text-white font-semibold">Pole Studios</strong>, a branding and web development studio operating on zero external capital. Designed an engineering requirements process that accelerated delivery time by 15%.
+                                Founder of <strong className="text-white font-semibold">Pole Studios</strong>, an independent creative studio operating on zero external capital. Designed streamlined software delivery protocols that cut turnaround time by 15%.
                             </p>
                             <p>
-                                Deep technical expertise in low-latency systems (Go, Rust), distributed memory architectures (<Link href="/work/kv-cache-fabric" className="text-emerald-400 underline underline-offset-4 hover:text-white">KV-Cache Fabric</Link>), DevSecOps static analysis (<Link href="/work/codesentry" className="text-emerald-400 underline underline-offset-4 hover:text-white">CodeSentry</Link>), and automated financial platforms.
+                                Focused on Python systems, Linux networking, Model Context Protocol (MCP) tool integrations, RAG pipelines, and disaggregated memory tiering (<Link href="/kv-cache" className="text-emerald-400 underline underline-offset-4 hover:text-white">KV-Cache Fabric</Link>).
                             </p>
                         </div>
 
-                        {/* Hardware / Systems Badges */}
+                        {/* Systems Badges */}
                         <div className="pt-4 flex flex-wrap gap-2 font-mono text-[11px]">
-                            {["Go", "Rust", "TypeScript", "Next.js", "gRPC", "Docker", "PostgreSQL", "Linux / epoll"].map((tag) => (
+                            {["Python", "Linux Systems", "Networking", "AI Architecture", "MCP", "RAG", "Agent Swarms", "Vector Search"].map((tag) => (
                                 <span key={tag} className="border border-white/15 bg-white/[0.03] px-3 py-1 font-bold text-gray-300 uppercase tracking-wider">
                                     #{tag}
                                 </span>
