@@ -23,10 +23,19 @@
   --gold: #3b82f6;
 }
 
-body {
+html, body {
   background-color: var(--background);
   color: var(--foreground);
   --font-syncopate: var(--font-syncopate);
+  cursor: auto !important;
+}
+
+a, button, [role="button"], select {
+  cursor: pointer !important;
+}
+
+input[type="text"], input[type="email"], textarea {
+  cursor: text !important;
 }
 
 ::selection {
